@@ -1,0 +1,8 @@
+# Mallowapp localization file for English.
+en:
+  name: mallowapp
+  home:
+    intro: "<em>Get mail about who unfollowed you on Twitter.</em> Mallow is a simple and beautiful mail service that delivers insights on who has unfollowed you swiftly to your inbox."
+    email_btn: "Get Notified"
+  footer:
+    copyright: "&copy; 2012 chocol.it &mdash;"

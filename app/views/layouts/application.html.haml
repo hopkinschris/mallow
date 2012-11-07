@@ -1,0 +1,13 @@
+= render 'layouts/head'
+
+%body{ :class => controller_name, :id => action_name }
+
+  %header
+    %h1= t 'name'
+    
+  %section
+    = yield
+
+  %footer
+    = raw(t 'footer.copyright')
+    = mail_to("chris@chocol.it", "Contact", :encode => "hex")

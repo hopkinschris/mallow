@@ -1,0 +1,8 @@
+- title(t 'name')
+
+%p= raw(t 'home.intro')
+
+- #TODO: Hook up form
+%form{ :action => '#', :method => 'post' }
+  %input{ :type => 'email', :name => 'email_list',:placeholder => 'your@email.com' }
+  %button{ :type => 'submit' }= t 'home.email_btn'
