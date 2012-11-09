@@ -1,0 +1,8 @@
+.overlay
+  .panel
+    %h2= t 'panel.title', :name => current_user.name
+    %span= t 'panel.body'
+
+    = form_for(current_user) do |f|
+      = f.email_field :email, :placeholder => 'your@email.com'
+      = f.submit (t 'home.request_btn')

@@ -5,3 +5,6 @@
 
 = form_tag(request_path) do
   = submit_tag(t 'home.request_btn')
+
+- if user_signed_in?
+  = render 'panel'
