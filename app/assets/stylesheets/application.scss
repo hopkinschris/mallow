@@ -17,7 +17,9 @@ html {
   font-smoothing: antialiased;
 }
 
-header, section, footer {
+header, 
+section, 
+footer {
   padding: 0 10px;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
@@ -31,13 +33,16 @@ header {
   padding: 140px 0;
 }
 
-section, footer {
+section, 
+footer {
   padding: 0 10px;
   max-width: 640px;
   margin-bottom: 2em;
 }
 
-body, input, button {
+body, 
+input, 
+button {
   color: #444;
   font-family: $base-font;
   font-weight: 300;
@@ -136,7 +141,7 @@ input[type="email"]:focus {
   border-color: #43acd7;
 }
 
-button {
+input[type="submit"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -166,7 +171,8 @@ button {
   font-size: 16px;
 }
 
-button:hover, button:focus {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   background-color: #fcfcfd;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfd), color-stop(100%, #f0f2f6));
   background-image: -webkit-linear-gradient(top, #fcfcfd, #f0f2f6);
@@ -176,7 +182,7 @@ button:hover, button:focus {
   background-image: linear-gradient(top, #fcfcfd, #f0f2f6);
 }
 
-button:active {
+input[type="submit"]:active {
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
@@ -210,7 +216,7 @@ button:active {
     background-size: 145px 66px;
   }
 
-  button {
+  input[type="submit"] {
     width: 100%;
   }
 }

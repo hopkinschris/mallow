@@ -2,7 +2,9 @@
 en:
   name: mallowapp
   home:
-    intro: "<em>Get mail about who unfollowed you on Twitter.</em> Mallow is a simple and beautiful mail service that delivers insights on who has unfollowed you swiftly to your inbox."
-    email_btn: "Get Notified"
+    intro_1: "<em>Get mail regarding who unfollowed you on Twitter.</em>"
+    intro_2: " Mallow is a simple and beautiful mail service that delivers daily insights on who has unfollowed you swiftly to your inbox."
+    request_btn: "Request Invite"
   footer:
-    copyright: "&copy; 2012 chocol.it &mdash;"
+    copyright: "&copy; 2012 chocol.it"
+    login_btn: "Log in"

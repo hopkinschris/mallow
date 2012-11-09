@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user?
 
   def show
-    redirect_to mallowapp_path
+    redirect_to root_url
   end
 
   def edit

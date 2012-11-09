@@ -1,8 +1,7 @@
 - title(t 'name')
 
-%p= raw(t 'home.intro')
+%p= raw(t 'home.intro_1')
+%p= raw(t 'home.intro_2')
 
-- #TODO: Hook up form
-%form{ :action => '#', :method => 'post' }
-  %input{ :type => 'email', :name => 'email_list',:placeholder => 'your@email.com' }
-  %button{ :type => 'submit' }= t 'home.email_btn'
+= form_tag(request_path) do
+  = submit_tag(t 'home.request_btn')
