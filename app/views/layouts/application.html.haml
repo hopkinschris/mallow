@@ -13,4 +13,7 @@
     %span &mdash;
     = mail_to("chris@chocol.it", "Contact", :encode => "hex")
     %span &mdash;
-    = link_to((t 'footer.login_btn'), request_path)
+    - if user_signed_in?
+      = link_to((t 'footer.logout_btn'), logout_path)
+    - else
+      = link_to((t 'footer.login_btn'), request_path)

@@ -1,10 +1,11 @@
 - title(t 'name')
 
-%p= raw(t 'home.intro_1')
-%p= raw(t 'home.intro_2')
-
-= form_tag(request_path) do
-  = submit_tag(t 'home.request_btn')
-
 - if user_signed_in?
-  = render 'panel'
+  %p= raw(t 'home.thanks_1')
+  %p= raw(t 'home.thanks_2', :email => current_user.email)
+- else
+  %p= raw(t 'home.intro_1')
+  %p= raw(t 'home.intro_2')
+
+  = form_tag(request_path) do
+    = submit_tag(t 'home.request_btn')
