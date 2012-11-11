@@ -5,8 +5,10 @@ en:
     intro_1: "<em>Get mail regarding who unfollowed you on Twitter.</em>"
     intro_2: " Mallow is a simple and beautiful mail service that delivers daily insights on who has unfollowed you swiftly to your inbox."
     request_btn: "Request Invite"
-    thanks_1: "Thank you."
-    thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready!"
+    thanks_1: "Thank you, and have a pleasant %{day}!"
+    thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready."
+    more_1: "Hey, %{name}!"
+    more_2: "You've requested an invite but we don't have an email address to send it too when it's ready. <em>Please graciously provide it below.</em>"
   panel:
     title: "Thanks, %{name}!"
     body: "Leave us your email so we know where to send your invite when it's ready."
