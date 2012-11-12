@@ -7,7 +7,14 @@ class User
   field :nickname, :type => String
   field :location, :type => String
   field :waitlist, :type => Boolean
-  attr_accessible :provider, :uid, :name, :email, :nickname, :location, :waitlist
+
+  attr_accessible :provider, 
+                  :uid, 
+                  :name, 
+                  :email, 
+                  :nickname, 
+                  :location, 
+                  :waitlist
 
   def self.create_with_omniauth(auth)
     create! do |user|

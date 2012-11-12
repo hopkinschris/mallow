@@ -9,7 +9,9 @@
   = form_for(current_user) do |f|
     = f.email_field :email, :autofocus => true, :placeholder => 'your@email.com'
     = f.submit (t 'home.request_btn')
-
+- elsif user_signed_in? && !current_user.waitlist?
+  #dashboard
+    = user_avatar(:bigger)
 - else
   %p= raw(t 'home.intro_1')
   %p= raw(t 'home.intro_2')

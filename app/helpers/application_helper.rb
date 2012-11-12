@@ -24,4 +24,14 @@ module ApplicationHelper
     end
   end
 
+  # Can return four different sizes from Twitter API
+  # :original - size is undefined, whatever user uploaded
+  # :mini - 24px by 24px
+  # :normal - 48px by 48px
+  # :bigger - 73px by 73px
+  def user_avatar(size)
+    src = Twitter.user(current_user.nickname).profile_image_url(size)
+    content_tag :img, nil, :src => src, :class => 'avatar'
+  end
+
 end
