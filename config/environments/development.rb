@@ -29,4 +29,8 @@ Mallowapp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  #OAuth Twitter
+  ENV['TWITTER_KEY'] = 'URyGU4NkbuKGPR4slrZpA'
+  ENV['TWITTER_SECRET'] = 'dSYu2lZ4hbRTbxEIElaqiqfRxZvpfTVo5WByA8rqb4'
+
 end
