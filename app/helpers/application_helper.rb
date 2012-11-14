@@ -24,13 +24,29 @@ module ApplicationHelper
     end
   end
 
+  def last_follower
+    Twitter.follower_ids(current_user.nickname.to_s).collection.last
+  end
+
+  def follower_handle
+    html = Twitter.user(last_follower).screen_name
+    content_tag :span, ('@' + html)
+  end
+
+  def follower_legit_score
+    followers = Twitter.user(last_follower).follower_count
+    friends = Twitter.user(last_follower).friends_count
+    score = friends.to_f / followers
+    content_tag :span, score.round(2)
+  end
+
   # Can return four different sizes from Twitter API
   # :original - size is undefined, whatever user uploaded
   # :mini - 24px by 24px
   # :normal - 48px by 48px
   # :bigger - 73px by 73px
-  def user_avatar(size)
-    src = Twitter.user(current_user.nickname).profile_image_url(size)
+  def follower_avatar(size)
+    src = Twitter.user(last_follower).profile_image_url(size)
     content_tag :img, nil, :src => src, :class => 'avatar'
   end
 

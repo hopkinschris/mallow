@@ -11,7 +11,9 @@
     = f.submit (t 'home.request_btn')
 - elsif user_signed_in? && !current_user.waitlist?
   #dashboard
-    = user_avatar(:bigger)
+    = follower_avatar(:bigger)
+    = follower_handle
+    = follower_legit_score
 - else
   %p= raw(t 'home.intro_1')
   %p= raw(t 'home.intro_2')
