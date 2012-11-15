@@ -1,12 +1,13 @@
 class User
   include Mongoid::Document
-  field :provider, :type => String
-  field :uid, :type => String
-  field :name, :type => String
-  field :email, :type => String
-  field :nickname, :type => String
-  field :location, :type => String
-  field :waitlist, :type => Boolean
+  field :provider
+  field :uid
+  field :name
+  field :email
+  field :nickname
+  field :location
+  field :waitlist,      :type => Boolean
+  field :followers,     :type => Array, :default => []
 
   attr_accessible :provider, 
                   :uid, 
@@ -14,7 +15,8 @@ class User
                   :email, 
                   :nickname, 
                   :location, 
-                  :waitlist
+                  :waitlist,
+                  :followers
 
   def self.create_with_omniauth(auth)
     create! do |user|
