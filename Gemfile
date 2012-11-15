@@ -17,10 +17,10 @@ gem 'execjs'
 # Embed the V8 JavaScript Interpreter into Ruby
 gem 'therubyracer'
 
-#OmniAuth
+# OmniAuth
 gem 'omniauth', '>= 1.1.0'
 
-#OmniAuth-Twitter
+# OmniAuth-Twitter
 gem 'omniauth-twitter'
 gem "twitter", "~> 3.7.0"
 
@@ -30,8 +30,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Ruby Debugger
+group :development do
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+
 # Database
 gem 'mongo', '~> 1.5.2'
 gem 'mongoid'
 gem 'bson'
 gem 'bson_ext'
+
+# Cron Jobs
+gem 'whenever', :require => false

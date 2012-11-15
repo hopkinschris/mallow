@@ -32,5 +32,7 @@ Mallowapp::Application.configure do
   #OAuth Twitter
   ENV['TWITTER_KEY'] = 'URyGU4NkbuKGPR4slrZpA'
   ENV['TWITTER_SECRET'] = 'dSYu2lZ4hbRTbxEIElaqiqfRxZvpfTVo5WByA8rqb4'
+  ENV['TWITTER_OAUTH_TOKEN'] = '131216274-A9I2GxssX1IgGbB8ut00EdUTcMFmqrMMP4tpymkY'
+  ENV['TWITTER_OAUTH_TOKEN_SECRET'] = '9i1zvexIMTmOLWlYtnj8OeSV8bo4qe9So9OkqYgWQ'
 
 end

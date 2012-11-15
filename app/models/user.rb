@@ -6,8 +6,8 @@ class User
   field :email
   field :nickname
   field :location
-  field :waitlist,      :type => Boolean
-  field :followers,     :type => Array, :default => []
+  field :waitlist,  :type => Boolean
+  field :followers, :type => Array, :default => []
 
   attr_accessible :provider, 
                   :uid, 
@@ -17,6 +17,8 @@ class User
                   :location, 
                   :waitlist,
                   :followers
+
+  after_create :get_followers
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -29,6 +31,21 @@ class User
          user.nickname = auth['info']['nickname'] || ""
          user.location = auth['info']['location'] || ""
       end
+    end
+  end
+
+  def get_followers
+    self.followers = Twitter.follower_ids(self.nickname).collection
+    save
+  end
+
+  def fresh_followers
+    fresh_followers = Twitter.follower_ids(self.nickname).collection + [657863]
+    diff = fresh_followers - self.followers
+    diff.each do |id|
+      # TODO
+      name = Twitter.user(id).screen_name
+      puts "#{Twitter.user(name).name}"
     end
   end
 
