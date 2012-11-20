@@ -40,6 +40,3 @@ gem 'mongo', '~> 1.5.2'
 gem 'mongoid'
 gem 'bson'
 gem 'bson_ext'
-
-# Cron Jobs
-gem 'whenever', :require => false

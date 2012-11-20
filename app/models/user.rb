@@ -44,16 +44,20 @@ class User
   end
 
   def get_unfollowers
-    fresh_followers = Twitter.follower_ids(self.nickname).collection
-    diff = self.followers - fresh_followers
-    if diff.size > 0
-      unfollowers << diff
-      diff.each do |id|
-        name = Twitter.user(id).screen_name
-        puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
-      end
+    if self.waitlist?
+      puts "#{self.name} is still on the waitlist."
     else
-      puts "No new unfollowers."
+      fresh_followers = Twitter.follower_ids(self.nickname).collection
+      diff = self.followers - fresh_followers
+      if diff.size > 0
+        unfollowers << diff
+        diff.each do |id|
+          name = Twitter.user(id).screen_name
+          puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
+        end
+      else
+        puts "No new unfollowers."
+      end
     end
   end
 
