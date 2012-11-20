@@ -51,6 +51,7 @@ class User
       diff = self.followers - fresh_followers
       if diff.size > 0
         unfollowers << diff
+        save
         diff.each do |id|
           name = Twitter.user(id).screen_name
           puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
