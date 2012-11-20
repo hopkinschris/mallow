@@ -50,7 +50,7 @@ class User
       unfollowers << diff
       diff.each do |id|
         name = Twitter.user(id).screen_name
-        puts "@#{Twitter.user(name).screen_name} unfollowed you."
+        puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
       end
     else
       puts "No new unfollowers."
