@@ -1,7 +1,7 @@
 - title(t 'name')
 
 - if user_signed_in? && current_user.waitlist? && current_user.email?
-  %p= raw(t 'home.thanks_1', :day => day_of_the_week)
+  %p= raw(t 'home.thanks_1', :day => Time.now.strftime("%A"))
   %p= raw(t 'home.thanks_2', :email => current_user.email)
 - elsif user_signed_in? && current_user.waitlist? && current_user.email.blank?
   %p= raw(t 'home.more_1', :name => current_user.name)
@@ -11,9 +11,9 @@
     = f.submit (t 'home.request_btn')
 - elsif user_signed_in? && !current_user.waitlist?
   #dashboard
-    = follower_avatar(:bigger)
-    = follower_handle
-    = follower_legit_score
+    - current_user.unfollowers.each do |unfollower|
+      - unfollower.each do |id|
+        = unfollower_link(id)
 - else
   %p= raw(t 'home.intro_1')
   %p= raw(t 'home.intro_2')

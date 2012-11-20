@@ -1,13 +1,16 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
+
   field :provider
   field :uid
   field :name
   field :email
   field :nickname
   field :location
-  field :waitlist,  :type => Boolean
-  field :followers, :type => Array, :default => []
+  field :waitlist,    :type => Boolean
+  field :followers,   :type => Array, :default => []
+  field :unfollowers, :type => Array, :default => []
 
   attr_accessible :provider, 
                   :uid, 
@@ -16,7 +19,8 @@ class User
                   :nickname, 
                   :location, 
                   :waitlist,
-                  :followers
+                  :followers,
+                  :unfollowers
 
   after_create :get_followers
 
@@ -39,13 +43,17 @@ class User
     save
   end
 
-  def fresh_followers
-    fresh_followers = Twitter.follower_ids(self.nickname).collection + [657863]
-    diff = fresh_followers - self.followers
-    diff.each do |id|
-      # TODO
-      name = Twitter.user(id).screen_name
-      puts "#{Twitter.user(name).name}"
+  def get_unfollowers
+    fresh_followers = Twitter.follower_ids(self.nickname).collection
+    diff = self.followers - fresh_followers
+    if diff.size > 0
+      unfollowers << diff
+      diff.each do |id|
+        name = Twitter.user(id).screen_name
+        puts "@#{Twitter.user(name).screen_name} unfollowed you."
+      end
+    else
+      puts "No new unfollowers."
     end
   end
 

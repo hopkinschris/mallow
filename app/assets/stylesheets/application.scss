@@ -280,8 +280,15 @@ input[type="submit"] {
 
 /* Dashboard */
 
-.avatar {
-  @include border-radius(73px);
+#dashboard {
+  text-align: center;
+  a {
+    border: none;
+    .avatar {
+      margin: 0 0.7em 1.8em 1em;
+      @include border-radius(73px);
+    }
+  }
 }
 
 /* Media Queries */
