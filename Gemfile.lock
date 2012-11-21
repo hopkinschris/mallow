@@ -145,6 +145,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sendgrid (1.1.0)
+      json
+      json
     simple_oauth (0.1.9)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -188,6 +191,7 @@ DEPENDENCIES
   ruby-debug19
   sass (~> 3.1.19)
   sass-rails (~> 3.2.3)
+  sendgrid
   therubyracer
   twitter (~> 3.7.0)
   uglifier (>= 1.0.3)

@@ -12,6 +12,9 @@ gem 'haml-rails'
 gem 'sass', '~> 3.1.19'
 gem 'jquery-rails'
 
+# Email
+gem 'sendgrid'
+
 # Run JavaScript code from Ruby
 gem 'execjs'
 # Embed the V8 JavaScript Interpreter into Ruby
