@@ -11,9 +11,8 @@
     = f.submit (t 'home.request_btn')
 - elsif user_signed_in? && !current_user.waitlist?
   #dashboard
-    - current_user.unfollowers.each do |unfollower|
-      - unfollower.each do |id|
-        = unfollower_link(id)
+    - current_user.unfollowers.each do |id|
+      = unfollower_link(id)
 - else
   %p= raw(t 'home.intro_1')
   %p= raw(t 'home.intro_2')

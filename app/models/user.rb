@@ -50,7 +50,7 @@ class User
       fresh_followers = Twitter.follower_ids(self.nickname).collection
       diff = self.followers - fresh_followers
       if diff.size > 0
-        unfollowers << diff
+        unfollowers.replace(diff)
         save
         UnfollowerMailer.new_mail(self).deliver
         diff.each do |id|
