@@ -73,6 +73,8 @@ GEM
     json (1.7.3)
     launchy (2.1.0)
       addressable (~> 2.2.6)
+    letter_opener (1.0.0)
+      launchy (>= 2.0.4)
     libv8 (3.3.10.4)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
@@ -181,6 +183,7 @@ DEPENDENCIES
   haml-rails
   heroku
   jquery-rails
+  letter_opener
   mongo (~> 1.5.2)
   mongoid
   omniauth (>= 1.1.0)

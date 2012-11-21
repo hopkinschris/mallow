@@ -35,6 +35,7 @@ end
 
 # Ruby Debugger
 group :development do
+  gem 'letter_opener'
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 

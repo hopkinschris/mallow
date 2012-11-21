@@ -16,6 +16,9 @@ Mallowapp::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
+  # Email will pop up in browser instead of being sent
+  config.action_mailer.delivery_method = :letter_opener
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -34,5 +37,11 @@ Mallowapp::Application.configure do
   ENV['TWITTER_SECRET'] = 'dSYu2lZ4hbRTbxEIElaqiqfRxZvpfTVo5WByA8rqb4'
   ENV['TWITTER_OAUTH_TOKEN'] = '131216274-A9I2GxssX1IgGbB8ut00EdUTcMFmqrMMP4tpymkY'
   ENV['TWITTER_OAUTH_TOKEN_SECRET'] = '9i1zvexIMTmOLWlYtnj8OeSV8bo4qe9So9OkqYgWQ'
+
+  #SendGrid
+  ENV['SENDGRID_USERNAME'] = 'app9055058@heroku.com'
+  ENV['SENDGRID_PASSWORD'] = 'mjtr67Nr'
+  ENV['SENDGRID_DOMAIN'] = 'mallowapp.herokuapp.com'
+  ENV['SENDGRID_ADDRESS'] = 'smtp.sendgrid.net'
 
 end
