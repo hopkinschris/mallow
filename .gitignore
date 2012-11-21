@@ -13,6 +13,3 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-# Ignore API Keys Secret for local environment
-config/environments/development.rb

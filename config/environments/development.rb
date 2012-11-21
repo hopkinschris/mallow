@@ -40,7 +40,7 @@ Mallowapp::Application.configure do
 
   #SendGrid
   ENV['SENDGRID_USERNAME'] = 'app9055058@heroku.com'
-  ENV['SENDGRID_PASSWORD'] = 'mjtr67Nr'
+  ENV['SENDGRID_PASSWORD'] = 'h4evzhce'
   ENV['SENDGRID_DOMAIN'] = 'mallowapp.herokuapp.com'
   ENV['SENDGRID_ADDRESS'] = 'smtp.sendgrid.net'
 
