@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore API Keys Secret for local environment
-/config/environments/development.rb
+config/environments/development.rb
