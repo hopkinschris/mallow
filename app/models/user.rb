@@ -52,7 +52,7 @@ class User
       if diff.size > 0
         unfollowers << diff
         save
-        UnfollowerMailer.new_email(self).deliver
+        UnfollowerMailer.new_mail(self).deliver
         diff.each do |id|
           name = Twitter.user(id).screen_name
           puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
