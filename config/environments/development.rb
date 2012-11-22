@@ -32,16 +32,4 @@ Mallowapp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  #OAuth Twitter
-  ENV['TWITTER_KEY'] = 'URyGU4NkbuKGPR4slrZpA'
-  ENV['TWITTER_SECRET'] = 'dSYu2lZ4hbRTbxEIElaqiqfRxZvpfTVo5WByA8rqb4'
-  ENV['TWITTER_OAUTH_TOKEN'] = '131216274-A9I2GxssX1IgGbB8ut00EdUTcMFmqrMMP4tpymkY'
-  ENV['TWITTER_OAUTH_TOKEN_SECRET'] = '9i1zvexIMTmOLWlYtnj8OeSV8bo4qe9So9OkqYgWQ'
-
-  #SendGrid
-  ENV['SENDGRID_USERNAME'] = 'app9055058@heroku.com'
-  ENV['SENDGRID_PASSWORD'] = 'h4evzhce'
-  ENV['SENDGRID_DOMAIN'] = 'mallowapp.herokuapp.com'
-  ENV['SENDGRID_ADDRESS'] = 'smtp.sendgrid.net'
-
 end

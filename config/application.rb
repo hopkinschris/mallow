@@ -10,6 +10,10 @@ if defined?(Bundler)
   Bundler.require(*Rails.groups(:assets => %w(development test)))
 end
 
+# Managing environment variables for local development
+mallowapp_env = File.expand_path('../mallowapp.rb', __FILE__)
+load(mallowapp_env) if File.exists?(mallowapp_env)
+
 module Mallowapp
   class Application < Rails::Application
     # Configure the default encoding used in templates for Ruby 1.9.
