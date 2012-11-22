@@ -51,6 +51,7 @@ class User
       diff = self.followers - fresh_followers
       if diff.size > 0
         unfollowers.replace(diff)
+        self.followers.replace(fresh_followers)
         save
         UnfollowerMailer.unfollowers_mail(self).deliver
         diff.each do |id|
