@@ -5,10 +5,12 @@ class UnfollowerMailer < ActionMailer::Base
 
   default :from => "chris@mallowapp.com"
 
+  helper ApplicationHelper
+
   # send a user a list of their unfollowers
-  def new_mail(user)
+  def unfollowers_mail(user)
     @user = user
     mail( :to => user.email,
-    :subject => "Mallow" )
+    :subject => "Here's your Twitter unfollowers for #{Time.now.strftime("%b. %e")}" )
   end
 end

@@ -9,13 +9,16 @@ module ApplicationHelper
   # :mini - 24px by 24px
   # :normal - 48px by 48px
   # :bigger - 73px by 73px
-  def unfollower_avatar(size, id)
+  def unfollower_avatar(size, id, options={})
+    if options[:style]
+      style = options[:style]
+    end
     src = Twitter.user(id).profile_image_url(size)
-    content_tag :img, nil, :src => src, :class => 'avatar'
+    content_tag :img, nil, :src => src, :class => 'avatar', :style => style
   end
 
-  def unfollower_link(id)
-    link_to unfollower_avatar(:normal, id), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank'
+  def unfollower_link(id, options={})
+    link_to unfollower_avatar(:normal, id, options), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank'
   end
 
 end

@@ -1,0 +1,18 @@
+%body{ :style => "background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#444;" }
+
+  #mail{ :style => "background:#6cd4ff;max-width:535px;margin:6em auto;border:1px solid #eaeef1;" }
+
+    %header{ :style => "padding:5em;text-align:center" }
+      %img{ :src => "http://mallowapp.herokuapp.com/assets/logo.png", :alt => "logo" ,:style => "width:100px;" }
+
+    %section{ :style => "background:#fff;padding:2.5em 3.5em 0.3em 3.5em;font-size:18px;font-weight:300;color:#444;" }
+      %p #{@user.name},
+      %p Happy #{Time.now.strftime("%A")}! Here is a list of your Twitter unfollowers from the past day for you to check out.
+
+    %section{ :style => "background:#fff;padding:0 3.5em 0.3em 3.5em;text-align:center;" }
+      - @user.unfollowers.each do |id|
+        = unfollower_link(id, :style => "border-radius:73px;margin:0 1em;")
+
+    %footer{ :style => "background:#fff;padding:0.2em 3.5em 3.3em 3.5em;font-size:18px;font-weight:300;color:#444;" }
+      %p Talk to you soon!
+      %p Christopher
