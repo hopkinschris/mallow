@@ -59,6 +59,8 @@ class User
           puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
         end
       else
+        unfollowers.clear
+        save
         puts "No new unfollowers."
       end
     end
