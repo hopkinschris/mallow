@@ -9,6 +9,7 @@ en:
     thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready."
     more_1: "Hey, %{name}!"
     more_2: "You've requested an invite but we don't have an email address to send it too when it's ready. <em>Please graciously provide it below.</em>"
+    placeholder: "No new unfollowers at this time."
   panel:
     title: "Thanks, %{name}!"
     body: "Leave us your email so we know where to send your invite when it's ready."
