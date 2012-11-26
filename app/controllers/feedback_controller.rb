@@ -11,11 +11,11 @@ class FeedbackController < ApplicationController
       @feedback = Feedback.new(params[:feedback])
       if @feedback && @feedback.valid?
         FeedbackMailer.feedback_mail(@feedback).deliver
-        redirect_to :back
+        redirect_to root_url
         flash[:success]= "Success!"
       else
         flash[:error]= "Failure."
-        redirect_to :back
+        redirect_to feedback_url
       end
     end
   end

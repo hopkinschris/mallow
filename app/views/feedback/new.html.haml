@@ -1,4 +1,4 @@
-= form_for(@feedback) do |f|
+= form_for(@feedback, :url => feedback_url) do |f|
   = f.email_field :email, :autofocus => true, :placeholder => 'your@email.com'
   = f.text_area :note
   = f.submit (t 'home.feedback_btn')
