@@ -1,8 +1,6 @@
 /* Variables */
-
 $header-color: #6cd4ff; // blue
 $panel-color: #eaeef1; // off-white
-$mail-color: #faf9f5; // beige
 $base-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 /* Mixins */
@@ -289,7 +287,7 @@ input[type="submit"] {
     border: none;
     .avatar {
       margin: 0 0.7em 1.8em 1em;
-      @include border-radius(73px);
+      @include border-radius(5px);
     }
   }
 }
