@@ -11,7 +11,7 @@
   %footer
     = raw(t 'footer.copyright')
     %span &mdash;
-    = mail_to("chris@chocol.it", "Contact", :encode => "hex")
+    = link_to((t 'footer.feedback_btn'), feedback_path)
     %span &mdash;
     - if user_signed_in?
       = link_to((t 'footer.logout_btn'), logout_path)

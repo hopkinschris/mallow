@@ -5,6 +5,7 @@ en:
     intro_1: "A simple and beautiful mail service that delivers daily insights on who unfollowed you on Twitter swiftly to your inbox."
     intro_2: "<em>Mallow is currently in private beta.</em>"
     request_btn: "Request Invite"
+    feedback_btn: "Submit Feedback"
     thanks_1: "Thank you, and have a pleasant %{day}!"
     thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready."
     more_1: "Hey, %{name}!"
@@ -15,5 +16,6 @@ en:
     body: "Leave us your email so we know where to send your invite when it's ready."
   footer:
     copyright: "&copy; 2012 chocol.it"
+    feedback_btn: "Feedback"
     login_btn: "Log in"
     logout_btn: "Log out"

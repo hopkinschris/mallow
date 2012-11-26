@@ -76,7 +76,8 @@ footer {
 }
 
 body, 
-input {
+input,
+textarea {
   color: #444;
   font-family: $base-font;
   font-weight: 300;
@@ -137,7 +138,8 @@ form {
   color: #9a9ea8;
 }
 
-input[type="email"] {
+input[type="email"],
+textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -289,6 +291,21 @@ input[type="submit"] {
       margin: 0 0.7em 1.8em 1em;
       @include border-radius(73px);
     }
+  }
+}
+
+/* Feedback */
+
+.feedback {
+  textarea {
+    display: block;
+    height: 125px;
+    margin: 0 auto;
+    resize: none;
+  }
+  input[type="submit"] {
+    margin-top: 0.5em;
+    width: 280px;
   }
 }
 
