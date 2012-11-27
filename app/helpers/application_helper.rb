@@ -20,7 +20,7 @@ module ApplicationHelper
       content_tag(:li, name, :class => 'name', :style => "list-style:none;font-weight:500;color:#444;") +
       content_tag(:li, handle, :class => 'handle', :style => "list-style:none;color:#999;font-weight:300;")
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
-    content_tag(:ul, details, :style => "padding:0;margin:0;float:right;")
+    content_tag(:ul, details, :style => "padding:0;margin:0 2.5em 0 0;float:right;")
   end
 
   def mailer_unfollower_link(id, options={})
