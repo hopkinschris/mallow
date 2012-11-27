@@ -51,16 +51,17 @@ class User
       diff = self.followers - fresh_followers
       if diff.size > 0
         unfollowers.replace(diff)
-        self.followers.replace(fresh_followers)
-        save
+        # self.followers.replace(fresh_followers)
+        # save
         UnfollowerMailer.unfollowers_mail(self).deliver
         diff.each do |id|
           name = Twitter.user(id).screen_name
           puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
         end
       else
-        unfollowers.clear
-        save
+        # unfollowers.clear
+        # save
+        UnfollowerMailer.unfollowers_mail(self).deliver
         puts "No new unfollowers."
       end
     end
