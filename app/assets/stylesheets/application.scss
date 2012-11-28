@@ -282,12 +282,29 @@ input[type="submit"] {
 /* Dashboard */
 
 #dashboard {
-  text-align: center;
   a {
     border: none;
+    display: inline-block;
+    margin-right: 1.5em;
     .avatar {
-      margin: 0 0.7em 1.8em 1em;
+      margin: 0 0.7em 1.8em 0;
       @include border-radius(5px);
+      display: inline-block;
+    }
+    ul {
+      text-align: left;
+      list-style: none;
+      display: inline-block;
+      float: right;
+      .name {
+        font-size: 20px;
+        color: #444;
+        line-height: 1.4em;
+      }
+      .handle {
+        font-size: 14px;
+        color: #999;
+      }
     }
   }
 }
@@ -334,6 +351,16 @@ input[type="submit"] {
 
   input[type="submit"] {
     width: 100%;
+  }
+
+  #dashboard {
+    a {
+      &:last-child {
+        .avatar {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
 
