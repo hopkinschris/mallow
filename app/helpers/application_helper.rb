@@ -36,11 +36,17 @@ module ApplicationHelper
     src = Twitter.user(id).profile_image_url(size)
     name = Twitter.user(id).name
     handle = '@' + Twitter.user(id).screen_name
+    current_user_followers = Twitter.follower_ids(current_user.uid.to_i).collection
+    unfollower_status =
+      if current_user_followers.include?(id)
+        content_tag(:span, "Following", :class => 'status')
+      end
     details =
-      content_tag(:li, name, :class => 'name') +
-      content_tag(:li, handle, :class => 'handle')
+      content_tag(:span, name, :class => 'name') +
+      content_tag(:span, handle, :class => 'handle') +
+      unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar') +
-    content_tag(:ul, details)
+    content_tag(:div, details)
   end
 
   def unfollower_link(id)

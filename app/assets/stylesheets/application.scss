@@ -106,7 +106,8 @@ h1 {
 }
 
 em {
-  background-color: #fffeca;}
+  background-color: #fffeca;
+}
 
 footer {
   text-align: center;
@@ -291,19 +292,32 @@ input[type="submit"] {
       @include border-radius(5px);
       display: inline-block;
     }
-    ul {
-      text-align: left;
-      list-style: none;
-      display: inline-block;
+    div {
       float: right;
       .name {
         font-size: 20px;
         color: #444;
         line-height: 1.4em;
+        display: block;
       }
       .handle {
         font-size: 14px;
         color: #999;
+        line-height: 1.3em;
+        float: left;
+        display: inline-block;
+      }
+      .status {
+        display: inline-block;
+        float: right;
+        margin: 0.3em;
+        font-size: 10px;
+        font-weight: normal;
+        color: #777;
+        padding: 2px 5px;
+        text-transform: uppercase;
+        background-color: #EEE;
+        @include border-radius(3px);
       }
     }
   }
