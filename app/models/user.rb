@@ -61,7 +61,7 @@ class User
       else
         unfollowers.clear
         save
-        puts "No new unfollowers."
+        puts "No new unfollowers for #{self.name}."
       end
     end
   end
