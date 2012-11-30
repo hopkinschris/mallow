@@ -18,12 +18,12 @@ module ApplicationHelper
     user_followers = Twitter.follower_ids(@user.uid.to_i).collection
     unfollower_status =
       if user_followers.include?(id)
-        content_tag(:span, "Following", :class => 'status', :style => "font-size:0.8em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
+        content_tag(:span, "Following", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
       else
-        content_tag(:span, raw("<strike>Following</strike>"), :class => 'status', :style => "font-size:0.8em;color:#777;padding:2px 5px;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
+        content_tag(:span, raw("<strike>Following</strike>"), :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#777;padding:2px 5px;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
       end
     details = 
-      content_tag(:li, handle, :class => 'handle', :style => "line-height:2em;-webkit-font-smoothing:antialiased;list-style:none;color:#444;") +
+      content_tag(:li, handle, :class => 'handle', :style => "line-height:1em;-webkit-font-smoothing:antialiased;list-style:none;color:#444;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
     content_tag(:ul, details, :style => "padding:0;margin:0 1em 0 0;vertical-align:top;display:inline-block;")
