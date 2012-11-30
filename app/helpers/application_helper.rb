@@ -18,15 +18,15 @@ module ApplicationHelper
     user_followers = Twitter.follower_ids(@user.uid.to_i).collection
     unfollower_status =
       if user_followers.include?(id)
-        content_tag(:span, "Following", :class => 'status', :style => "font-size:10px;-webkit-font-smoothing:antialiased;color:#fff;padding:2px 5px;margin:0.3em 0;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
+        content_tag(:span, "Following", :class => 'status', :style => "font-size:8px;-webkit-font-smoothing:antialiased;color:#fff;padding:2px 5px;margin:0.3em 0;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
       else
-        content_tag(:span, "Not Following", :class => 'status', :style => "font-size:10px;-webkit-font-smoothing:antialiased;color:#777;padding:2px 5px;margin:0.3em 0;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
+        content_tag(:span, "Not Following", :class => 'status', :style => "font-size:8px;-webkit-font-smoothing:antialiased;color:#777;padding:2px 5px;margin:0.3em 0;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
       end
     details = 
-      content_tag(:li, handle, :class => 'handle', :style => "font-size:20px;-webkit-font-smoothing:antialiased;list-style:none;font-weight:300;line-height:1.4em;color:#444;margin-bottom:4px;") +
+      content_tag(:li, handle, :class => 'handle', :style => "-webkit-font-smoothing:antialiased;list-style:none;font-weight:300;line-height:1.4em;color:#444;margin-bottom:4px;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
-    content_tag(:ul, details, :style => "padding:0;margin:0;vertical-align:top;display:inline-block;")
+    content_tag(:ul, details, :style => "padding:0;margin:0 1em 0 0;vertical-align:top;display:inline-block;")
   end
 
   def mailer_unfollower_link(id, options={})
