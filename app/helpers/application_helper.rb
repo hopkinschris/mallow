@@ -14,7 +14,7 @@ module ApplicationHelper
       style = options[:style]
     end
     src = Twitter.user(id).profile_image_url(size)
-    handle = '@' + Twitter.user(id).screen_name
+    handle = '@' + (Twitter.user(id).screen_name).downcase
     user_followers = Twitter.follower_ids(@user.uid.to_i).collection
     unfollower_status =
       if user_followers.include?(id)
@@ -26,7 +26,7 @@ module ApplicationHelper
       content_tag(:li, handle, :class => 'handle', :style => "font-size:20px;-webkit-font-smoothing:antialiased;list-style:none;font-weight:300;line-height:1.4em;color:#444;margin-bottom:4px;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
-    content_tag(:ul, details, :style => "padding:0;margin:0 2.5em 0 0;vertical-align:top;display:inline-block;")
+    content_tag(:ul, details, :style => "padding:0;margin:0 2.5em 0 0;vertical-align:top;float:right;display:inline-block;")
   end
 
   def mailer_unfollower_link(id, options={})
@@ -40,7 +40,7 @@ module ApplicationHelper
   # :bigger - 73px by 73px
   def unfollower_details(size, id)
     src = Twitter.user(id).profile_image_url(size)
-    handle = '@' + Twitter.user(id).screen_name
+    handle = '@' + (Twitter.user(id).screen_name).downcase
     current_user_followers = Twitter.follower_ids(current_user.uid.to_i).collection
     unfollower_status =
       if current_user_followers.include?(id)
