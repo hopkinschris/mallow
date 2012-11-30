@@ -301,23 +301,26 @@ input[type="submit"] {
         display: block;
       }
       .handle {
-        font-size: 14px;
-        color: #999;
-        line-height: 1.3em;
-        float: left;
-        display: inline-block;
+        font-size: 20px;
+        color: #444;
+        line-height: 1.4em;
+        display: block;
       }
       .status {
         display: inline-block;
-        float: right;
-        margin: 0.3em;
+        float: left;
+        margin: 0.3em 0;
         font-size: 10px;
         font-weight: normal;
         color: #777;
-        padding: 2px 5px;
+        padding: 3px 5px;
         text-transform: uppercase;
         background-color: #EEE;
         @include border-radius(3px);
+      }
+      .status.following {
+        background-color: #6cd4ff;
+        color: #fff;
       }
     }
   }
