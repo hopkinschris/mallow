@@ -26,7 +26,7 @@ module ApplicationHelper
       content_tag(:li, handle, :class => 'handle', :style => "font-size:20px;-webkit-font-smoothing:antialiased;list-style:none;font-weight:300;line-height:1.4em;color:#444;margin-bottom:4px;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
-    content_tag(:ul, details, :style => "padding:0;margin:0 2.5em 0 0;vertical-align:top;float:right;display:inline-block;")
+    content_tag(:ul, details, :style => "padding:0;margin:0;vertical-align:top;display:inline-block;")
   end
 
   def mailer_unfollower_link(id, options={})
