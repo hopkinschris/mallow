@@ -9,8 +9,9 @@ class User
   field :nickname
   field :location
   field :waitlist,    :type => Boolean
-  field :followers,   :type => Array, :default => []
-  field :unfollowers, :type => Array, :default => []
+  field :mail_opt,    :type => Boolean, :default => true
+  field :followers,   :type => Array,   :default => []
+  field :unfollowers, :type => Array,   :default => []
 
   attr_accessible :provider, 
                   :uid, 
@@ -19,6 +20,7 @@ class User
                   :nickname, 
                   :location, 
                   :waitlist,
+                  :mail_opt,
                   :followers,
                   :unfollowers
 
@@ -44,8 +46,8 @@ class User
   end
 
   def get_unfollowers
-    if self.waitlist?
-      puts "#{self.name} is still on the waitlist."
+    if self.waitlist? || !self.mail_opt?
+      puts "#{self.name} is still on the waitlist or has opted out."
     else
       fresh_followers = Twitter.follower_ids(self.nickname).collection
       diff = self.followers - fresh_followers

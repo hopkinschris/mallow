@@ -326,6 +326,9 @@ input[type="submit"] {
 /* Dashboard */
 
 #dashboard {
+  p {
+    text-align: center;
+  }
   a {
     border: none;
     display: inline-block;
@@ -381,6 +384,22 @@ input[type="submit"] {
   input[type="submit"] {
     margin-top: 0.5em;
     width: 280px;
+  }
+}
+
+/* Settings */
+
+.settings {
+  form {
+    label {
+      font-size: 18px;
+      vertical-align: middle;
+      line-height: 1.8em;
+    }
+    input[type="submit"] {
+      margin: 0 auto;
+      display: block;
+    }
   }
 }
 

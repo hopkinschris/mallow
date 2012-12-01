@@ -1,1 +1,4 @@
-- #TODO Build opt out form
+= form_for(@user) do |f|
+  = f.check_box :mail_opt
+  = f.label "Automatically send me a daily unfollower email"
+  = f.submit "Save Settings"
