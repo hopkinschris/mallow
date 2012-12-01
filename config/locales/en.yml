@@ -17,7 +17,7 @@ en:
   alert:
     feedback:
       success: "<strong>Success!</strong> Thanks for taking the time submit your feedback."
-      fail: "<strong>Fail!</strong> Please complete all the fields below."
+      fail: "<strong>Fail!</strong> Complete all the fields below."
     session:
       log_in: "<strong>Signed in successfully!</strong>"
       fail: "<strong>Authentication error:</strong> %{message}"
