@@ -2,6 +2,7 @@ require 'action_pack'
 
 class ApplicationController < ActionController::Base
   include ActionView::Helpers::OutputSafetyHelper
+  include ActionView::Helpers::TagHelper
   protect_from_forgery
 
   helper_method :current_user
@@ -35,5 +36,14 @@ class ApplicationController < ActionController::Base
         redirect_to root_url
       end
     end
+
+  # Stuff errors into flash message
+  def flash_errors(object)
+    errors = []
+    object.errors.full_messages.each do |msg|
+      errors << content_tag(:li, msg)
+    end
+    raw(errors.join)
+  end
     
 end

@@ -14,8 +14,8 @@ class FeedbackController < ApplicationController
         redirect_to root_url
         flash[:success]= raw(t 'alert.feedback.success')
       else
-        flash[:error]= raw(t 'alert.feedback.fail')
-        redirect_to feedback_url
+        flash[:error]= raw(t 'alert.feedback.fail', :errors => flash_errors(@feedback))
+        render :new
       end
     end
   end
