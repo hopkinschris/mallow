@@ -8,6 +8,8 @@ Mallowapp::Application.routes.draw do
   match '/request' => 'sessions#new', :as => :request
   match '/logout' => 'sessions#destroy', :as => :logout
 
+  match '/settings' => 'settings#show', :as => :settings
+
   get  '/feedback' => 'feedback#new', :as => :feedback
   post '/feedback' => 'feedback#create'
 
