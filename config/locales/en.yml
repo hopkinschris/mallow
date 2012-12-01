@@ -26,6 +26,7 @@ en:
       auth: "You need to sign in for access to this page."
   footer:
     copyright: "&copy; 2012 chocol.it &mdash;"
+    home_btn: "Home"
     feedback_btn: "Feedback"
     settings_btn: "Settings"
     login_btn: "Log in"
