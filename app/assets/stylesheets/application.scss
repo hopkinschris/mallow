@@ -121,6 +121,9 @@ footer {
   a {
     color: #999;
   }
+  .copyright {
+    display: inline-block;
+  }
 }
 
 /* Flashes */
@@ -417,6 +420,12 @@ input[type="submit"] {
           margin-bottom: 0;
         }
       }
+    }
+  }
+
+  footer {
+    .copyright {
+      display: none;
     }
   }
 }

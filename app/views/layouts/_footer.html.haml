@@ -1,0 +1,10 @@
+%footer
+  .copyright= raw(t 'footer.copyright')
+  = link_to((t 'footer.feedback_btn'), feedback_path)
+  %span &mdash;
+  - if user_signed_in?
+    = link_to(raw(t 'footer.settings_btn'), settings_path)
+    %span &mdash;
+    = link_to((t 'footer.logout_btn'), logout_path)
+  - else
+    = link_to((t 'footer.login_btn'), request_path)
