@@ -19,15 +19,4 @@
     - else
       = link_to((t 'footer.login_btn'), request_path)
 
-:javascript
-  $(function() {
-    setTimeout((function(){
-      $("div.flash").animate({
-        opacity: 0,
-        height: 0,
-        paddingTop: 0,
-        paddingBottom: 0,
-        margin: 0
-      });
-    }), 3e3);
-  });
+= yield :javascripts

@@ -3,6 +3,7 @@ require 'action_pack'
 class ApplicationController < ActionController::Base
   include ActionView::Helpers::OutputSafetyHelper
   include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::CaptureHelper
   protect_from_forgery
 
   helper_method :current_user
