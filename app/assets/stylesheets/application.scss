@@ -109,6 +109,10 @@ em {
   background-color: #fffeca;
 }
 
+strong {
+  font-weight: bold;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
@@ -116,6 +120,34 @@ footer {
   a {
     color: #999;
   }
+}
+
+/* Flashes */
+
+// general
+.flash {
+  text-align: center;
+  @include border-radius(5px);
+  margin: 0 auto 1em;
+  padding: 0.5em 1em;
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border: 1px solid #bce8f1;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+// error
+.flash-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+// success
+.flash-success {
+  color:#468847;
+  background-color:#dff0d8;
+  border-color:#d6e9c6;
 }
 
 /* Form */

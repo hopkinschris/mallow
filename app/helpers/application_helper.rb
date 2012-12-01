@@ -4,6 +4,14 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def flash_class(level)
+    case level
+    when :notice then "flash"
+    when :success then "flash flash-success"
+    when :error then "flash flash-error"
+    end
+  end
+
   # Can return four different sizes from Twitter API
   # :original - size is undefined, whatever user uploaded
   # :mini - 24px by 24px

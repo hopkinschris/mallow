@@ -5,15 +5,16 @@ class SessionsController < ApplicationController
     user = User.where(:provider => auth['provider'], :uid => auth['uid']).first || User.create_with_omniauth(auth)
     session[:user_id] = user.id
     if user.email.blank?
-      redirect_to edit_user_path(user), :alert => "Please enter your email address."
+      redirect_to edit_user_path(user)
     else
-      redirect_to root_url, :notice => 'Signed in!'
+      flash[:success]= raw(t 'alert.session.log_in')
+      redirect_to root_url
     end
   end
 
   def destroy
     reset_session
-    redirect_to root_url, :notice => 'Signed out!'
+    redirect_to root_url
   end
 
   def new
@@ -21,7 +22,8 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+    flash[:error]= raw(t 'alert.session.fail', :message => params[:message].humanize)
+    redirect_to root_url
   end
 
 end

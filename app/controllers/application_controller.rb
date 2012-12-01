@@ -1,4 +1,7 @@
+require 'action_pack'
+
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::OutputSafetyHelper
   protect_from_forgery
 
   helper_method :current_user
@@ -21,13 +24,15 @@ class ApplicationController < ActionController::Base
     def correct_user?
       @user = User.find(params[:id])
       unless current_user == @user
-        redirect_to root_url, :alert => "Access denied."
+        flash[:error]= raw(t 'alert.user.denied')
+        redirect_to root_url
       end
     end
 
     def authenticate_user!
       if !current_user
-        redirect_to root_url, :alert => 'You need to sign in for access to this page.'
+        flash[:error]= t 'alert.user.auth'
+        redirect_to root_url
       end
     end
     

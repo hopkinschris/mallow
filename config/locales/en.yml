@@ -14,6 +14,16 @@ en:
   panel:
     title: "Thanks, %{name}!"
     body: "Leave us your email so we know where to send your invite when it's ready."
+  alert:
+    feedback:
+      success: "<strong>Success!</strong> Thanks for taking the time submit your feedback."
+      fail: "<strong>Fail!</strong> Please complete all the fields below."
+    session:
+      log_in: "<strong>Signed in successfully!</strong>"
+      fail: "<strong>Authentication error:</strong> %{message}"
+    user:
+      denied: "<strong>Access denied!</strong>"
+      auth: "You need to sign in for access to this page."
   footer:
     copyright: "&copy; 2012 chocol.it"
     feedback_btn: "Feedback"
