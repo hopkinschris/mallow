@@ -67,4 +67,9 @@ module ApplicationHelper
     link_to unfollower_details(:normal, id), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank'
   end
 
+  def promotional_link
+    link = link_to "@hopkinschris", "http://twitter.com/hopkinschris"
+    content_tag(:span, raw("Crafted by " + link), :class => 'promo-link')
+  end
+
 end

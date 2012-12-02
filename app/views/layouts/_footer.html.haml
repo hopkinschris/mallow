@@ -1,5 +1,5 @@
 %footer
-  .copyright= raw(t 'footer.copyright')
+  / .copyright= raw(t 'footer.copyright')
   = link_to((t 'footer.home_btn'), root_url)
   %span &mdash;
   - if user_signed_in?
@@ -13,3 +13,5 @@
     = link_to((t 'footer.feedback_btn'), feedback_path)
     %span &mdash;
     = link_to((t 'footer.login_btn'), request_path)
+
+  = promotional_link

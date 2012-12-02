@@ -41,6 +41,19 @@ $base-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: radial-gradient(50% 50%, ellipse closest-corner, rgba(0,0,0,0.45) 1%, rgba(0,0,0,0.8) 100%);
 }
 
+// [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/)
+@mixin clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 /* Reset */
 
 @import "reset";
@@ -124,13 +137,20 @@ footer {
   .copyright {
     display: inline-block;
   }
+  .promo-link {
+    color: #ccc;
+    margin: 1em 0;
+    display: block;
+    a {
+      color: #ccc;
+    }
+  }
 }
 
 /* Flashes */
 
 // general
 .flash {
-  text-align: center;
   @include border-radius(5px);
   margin: 0 auto 1em;
   padding: 0.5em 1em;
@@ -159,7 +179,6 @@ footer {
 
 form {
   margin: 0 0 1em;
-  text-align: center;
 }
 
 ::-webkit-input-placeholder {
@@ -223,6 +242,7 @@ input[type="submit"] {
   vertical-align: top;
   text-shadow: 0 1px 0 #fff;
   font-size: 16px;
+  margin: 0;
   &:hover, &:focus {
     @include gradient(#fcfcfd, #f0f2f6);
   }
@@ -375,15 +395,17 @@ input[type="submit"] {
 /* Feedback */
 
 .feedback {
-  textarea {
-    display: block;
-    height: 125px;
-    margin: 0 auto;
-    resize: none;
-  }
-  input[type="submit"] {
-    margin-top: 0.5em;
-    width: 280px;
+  form {
+    @include clearfix;
+    input[type="email"] {
+      width: 100%;
+    }
+    textarea {
+      width: 100%;
+      display: block;
+      height: 125px;
+      resize: none;
+    }
   }
 }
 
@@ -391,14 +413,16 @@ input[type="submit"] {
 
 .settings {
   form {
-    label {
-      font-size: 18px;
-      vertical-align: middle;
-      line-height: 1.8em;
+    .label-checkbox {
+      display: block;
+      label {
+        vertical-align: middle;
+        line-height: 1.4em;
+        font-size: 18px;
+      }
     }
     input[type="submit"] {
-      margin: 0 auto;
-      display: block;
+      margin-top: 0.3em;
     }
   }
 }
@@ -438,6 +462,18 @@ input[type="submit"] {
         .avatar {
           margin-bottom: 0;
         }
+      }
+    }
+  }
+
+  .settings {
+    form {
+      input[type="checkbox"] {
+        vertical-align: sub;
+      }
+      label {
+        width: 93%;
+        float: right;
       }
     }
   }
