@@ -10,14 +10,14 @@ en:
     thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready."
     more_1: "Hey, %{name}!"
     more_2: "You've requested an invite but we don't have an email address to send it too when it's ready. <em>Please graciously provide it below.</em>"
-    placeholder: "No new unfollowers at this time."
+    placeholder: "No new unfollowers today."
   panel:
     title: "Thanks, %{name}!"
     body: "Leave us your email so we know where to send your invite when it's ready."
   alert:
     feedback:
       success: "<strong>Success!</strong> Thanks for taking the time submit your feedback."
-      fail: "<strong>Oops.</strong> Correct the following errors: %{errors}"
+      fail: "<strong>Oops.</strong> Some errors happened: %{errors}"
     session:
       log_in: "<strong>Signed in successfully!</strong>"
       fail: "<strong>Authentication error:</strong> %{message}"
