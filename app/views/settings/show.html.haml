@@ -1,5 +1,7 @@
 = form_for(@user) do |f|
   .label-checkbox
-    = f.check_box :mail_opt
-    = f.label "Automatically send me a daily unfollower email"
+    - unless current_user.waitlist?
+      = f.check_box :mail_opt
+      = f.label "Automatically send me a daily unfollower email"
+  = f.email_field :email, :placeholder => 'your@email.com'
   = f.submit "Save Settings"

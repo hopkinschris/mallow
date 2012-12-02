@@ -407,6 +407,7 @@ input[type="submit"] {
   form {
     .label-checkbox {
       display: block;
+      margin-bottom: 0.9em;
       label {
         vertical-align: middle;
         line-height: 1.4em;
@@ -414,7 +415,7 @@ input[type="submit"] {
       }
     }
     input[type="submit"] {
-      margin-top: 0.8em;
+      display: block;
     }
   }
 }
