@@ -22,6 +22,7 @@ en:
       log_in: "<strong>Signed in successfully!</strong>"
       fail: "<strong>Authentication error:</strong> %{message}"
     user:
+      success: "<strong>Success!</strong> Your settings have been saved."
       denied: "<strong>Access denied!</strong>"
       auth: "You need to sign in for access to this page."
   footer:
