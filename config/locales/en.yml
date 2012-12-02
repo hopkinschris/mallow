@@ -25,7 +25,7 @@ en:
       denied: "<strong>Access denied!</strong>"
       auth: "You need to sign in for access to this page."
   footer:
-    copyright: "&copy; 2012 chocol.it &mdash;"
+    copyright: "&copy; 2012 <a href='http://chocol.it'>chocol.it</a>"
     home_btn: "Home"
     feedback_btn: "Feedback"
     settings_btn: "Settings"

@@ -128,22 +128,17 @@ strong {
 }
 
 footer {
-  text-align: center;
+  @include clearfix;
   font-size: 14px;
   color: #999;
   a {
     color: #999;
   }
   .copyright {
-    display: inline-block;
+    float: left;
   }
-  .promo-link {
-    color: #ccc;
-    margin: 1em 0;
-    display: block;
-    a {
-      color: #ccc;
-    }
+  .footer-nav {
+    float: right;
   }
 }
 
@@ -346,9 +341,6 @@ input[type="submit"] {
 /* Dashboard */
 
 #dashboard {
-  p {
-    text-align: center;
-  }
   a {
     border: none;
     display: inline-block;
@@ -457,6 +449,9 @@ input[type="submit"] {
   }
 
   #dashboard {
+    .none {
+      text-align: center;
+    }
     a {
       &:last-child {
         .avatar {
@@ -481,6 +476,10 @@ input[type="submit"] {
   footer {
     .copyright {
       display: none;
+    }
+    .footer-nav {
+      float: none;
+      text-align: center;
     }
   }
 }

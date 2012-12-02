@@ -17,7 +17,7 @@
   - # User signed in and no longer on waitlist
   #dashboard
     - if current_user.unfollowers.count == 0
-      %p= t 'home.placeholder'
+      %p.none= t 'home.placeholder'
     - else
       - current_user.unfollowers.each do |id|
         = unfollower_link(id)
