@@ -26,9 +26,9 @@ module ApplicationHelper
     user_followers = Twitter.follower_ids(@user.uid.to_i).collection
     unfollower_status =
       if user_followers.include?(id)
-        content_tag(:span, "Following", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
+        content_tag(:span, "You Follow", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
       else
-        content_tag(:span, raw("<strike>Following</strike>"), :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#777;padding:2px 5px;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
+        content_tag(:span, "Don't Follow", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#777;padding:2px 5px;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
       end
     details = 
       content_tag(:li, handle, :class => 'handle', :style => "line-height:1.3em;-webkit-font-smoothing:antialiased;list-style:none;color:#444;") +
@@ -52,9 +52,9 @@ module ApplicationHelper
     current_user_followers = Twitter.follower_ids(current_user.uid.to_i).collection
     unfollower_status =
       if current_user_followers.include?(id)
-        content_tag(:span, "Following", :class => 'status following')
+        content_tag(:span, "You Follow", :class => 'status following')
       else
-        content_tag(:span, "Not Following", :class => 'status')
+        content_tag(:span, "Don't Follow", :class => 'status')
       end
     details =
       content_tag(:span, handle, :class => 'handle') +
