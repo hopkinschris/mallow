@@ -53,6 +53,13 @@ class User
     save
   end
 
+  def welcome_new_user
+    self.waitlist = false
+    save
+    WelcomeMailer.welcome_mail(self).deliver
+    puts "Today we welcome #{self.name} to Mallow!"
+  end
+
   def get_unfollowers
     if self.waitlist? || !self.mail_opt?
       puts "#{self.name} is still on the waitlist or has opted out."
