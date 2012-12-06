@@ -173,6 +173,8 @@ footer {
 /* Form */
 
 form {
+  z-index: 9999;
+  position: relative;
   margin: 0 0 1em;
 }
 
