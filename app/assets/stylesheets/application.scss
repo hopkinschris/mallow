@@ -403,7 +403,8 @@ input[type="submit"] {
 
 /* Settings */
 
-.settings {
+.settings,
+.users#update {
   form {
     .label-checkbox {
       display: block;

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       flash[:success]= raw(t 'alert.user.success')
       redirect_to root_url
     else
-      render :edit
+      flash.now[:error]= raw(t 'alert.settings.fail', :errors => flash_errors(@user))
+      render :template => 'settings/show'
     end
   end
 

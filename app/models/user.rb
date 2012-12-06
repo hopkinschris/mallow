@@ -24,6 +24,8 @@ class User
                   :followers,
                   :unfollowers
 
+  validates_presence_of :email, :on => :update, :unless => Proc.new { |user| user.email.nil? }
+
   after_create :get_followers
 
   def self.create_with_omniauth(auth)
@@ -31,9 +33,9 @@ class User
       user.waitlist = true
       user.provider = auth['provider']
       user.uid = auth['uid']
+      user.email = nil
       if auth['info']
          user.name = auth['info']['name'] || ""
-         user.email = auth['info']['email'] || ""
          user.nickname = auth['info']['nickname'] || ""
          user.location = auth['info']['location'] || ""
       end

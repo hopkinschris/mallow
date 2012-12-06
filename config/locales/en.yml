@@ -18,6 +18,8 @@ en:
     feedback:
       success: "<strong>Success!</strong> Thanks for taking the time submit your feedback."
       fail: "<strong>Oops.</strong> Some errors happened: %{errors}"
+    settings:
+      fail: "<strong>Oops.</strong> Some errors happened: %{errors}"
     session:
       log_in: "<strong>Signed in successfully!</strong>"
       fail: "<strong>Authentication error:</strong> %{message}"
