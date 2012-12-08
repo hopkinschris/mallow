@@ -15,7 +15,6 @@
   - # GAS — Google Analytics on Steroids (https://github.com/CardinalPath/gas)
   - if Rails.env.production?
     :javascript
-      <script type="text/javascript">
       var _gas = _gas || [];
       _gas.push(['_setAccount', 'UA-36825882-1']);
       _gas.push(['_setDomainName', '.mallowapp.com']);
@@ -36,4 +35,3 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ga, s);
       })();
-      </script>
