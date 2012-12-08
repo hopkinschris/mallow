@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user!
       if !current_user
-        flash[:error]= t 'alert.user.auth'
+        flash[:error]= raw(t 'alert.user.auth')
         redirect_to root_url
       end
     end

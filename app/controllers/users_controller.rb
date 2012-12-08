@@ -12,7 +12,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.email.nil? && @user.update_attributes(params[:user])
+      @user.welcome_waitlisted_user
+      flash[:success]= raw(t 'alert.user.success')
+      redirect_to root_url
+    elsif @user.update_attributes(params[:user])
       flash[:success]= raw(t 'alert.user.success')
       redirect_to root_url
     else

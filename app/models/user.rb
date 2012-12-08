@@ -60,6 +60,13 @@ class User
     puts "Today we welcome #{self.name} to Mallow!"
   end
 
+  def welcome_waitlisted_user
+    if self.waitlist?
+      WelcomeWaitlistedMailer.welcome_waitlisted_mail(self).deliver
+      puts "#{self.name} has requested an invite to Mallow."
+    end
+  end
+
   def get_unfollowers
     if self.waitlist? || !self.mail_opt?
       puts "#{self.name} is still on the waitlist or has opted out."
