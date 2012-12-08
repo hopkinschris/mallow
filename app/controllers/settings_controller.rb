@@ -1,6 +1,11 @@
 class SettingsController < ApplicationController
 
   def show
-    @user = User.find(current_user.id)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    else
+      flash[:error]= raw(t 'alert.user.auth')
+      redirect_to root_url
+    end
   end
 end
