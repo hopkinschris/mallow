@@ -12,7 +12,28 @@
   - # jQuery — Google Ajax API CDN Hosted
   = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 
-  - # analytics in production
+  - # GAS — Google Analytics on Steroids (https://github.com/CardinalPath/gas)
   - if Rails.env.production?
     :javascript
-      // insert analytics
+      <script type="text/javascript">
+      var _gas = _gas || [];
+      _gas.push(['_setAccount', 'UA-36825882-1']);
+      _gas.push(['_setDomainName', '.mallowapp.com']);
+      _gas.push(['_trackPageview']);
+      _gas.push(['_gasTrackForms']);
+      _gas.push(['_gasTrackOutboundLinks']);
+      _gas.push(['_gasTrackMaxScroll']);
+      _gas.push(['_gasTrackDownloads']);
+      _gas.push(['_gasTrackYoutube', {force: true}]);
+      _gas.push(['_gasTrackVimeo', {force: true}]);
+      _gas.push(['_gasTrackMailto']);
+
+      (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = '//cdnjs.cloudflare.com/ajax/libs/gas/1.10.1/gas.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
