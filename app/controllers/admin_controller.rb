@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   def show
     unless admin_user?
-      flash[:error]= raw(t 'alert.user.denied')
+      flash[:error]= raw(t 'alert.user.auth')
       redirect_to root_url
     end
   end

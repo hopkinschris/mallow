@@ -40,7 +40,9 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_user?
-      return true if current_user.roles.include?(:admin)
+      if user_signed_in?
+        return true if current_user.roles.include?(:admin)
+      end
     end
 
   # Stuff errors into flash message
