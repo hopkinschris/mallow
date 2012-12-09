@@ -6,7 +6,7 @@ en:
     intro_2: "<em>Mallow is currently in private beta.</em>"
     request_btn: "Request Invite"
     feedback_btn: "Submit Feedback"
-    thanks_1: "Thank you, and have a pleasant %{day}!"
+    thanks_1: "Thank you, and have a pleasant day!"
     thanks_2: "Your invite will be sent to <em>%{email}</em> when it's ready."
     more_1: "Hey, %{name}!"
     more_2: "You've requested an invite but we don't have an email address to send it too when it's ready. <em>Please graciously provide it below.</em>"

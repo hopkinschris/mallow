@@ -7,7 +7,7 @@
 
     %section{ :style => "background:#fff;padding:1.8em 3.1em 0.3em 3.1em;font-weight:300;color:#444;" }
       %p #{@user.name},
-      %p Happy #{Time.now.strftime("%A")}! Here is a list of your Twitter unfollowers from the past day for you to check out:
+      %p Here is a list of your Twitter unfollowers from the past day for you to check out:
 
     %section{ :style => "background:#fff;padding:1.5em 3.1em 0.3em 3.1em;" }
       - @user.unfollowers.each do |id|

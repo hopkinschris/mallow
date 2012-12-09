@@ -2,7 +2,7 @@
 
 - if user_signed_in? && current_user.waitlist? && current_user.email?
   - # User signed in but is on waitlist
-  %p= raw(t 'home.thanks_1', :day => Time.now.strftime("%A"))
+  %p= raw(t 'home.thanks_1')
   %p= raw(t 'home.thanks_2', :email => current_user.email)
 
 - elsif user_signed_in? && current_user.waitlist? && current_user.email.blank?
