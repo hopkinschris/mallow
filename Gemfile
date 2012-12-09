@@ -42,6 +42,9 @@ end
 # New Relic 
 gem 'newrelic_rpm'
 
+# Air Brake
+gem 'airbrake'
+
 # Database
 gem 'mongo', '~> 1.5.2'
 gem 'mongoid'
