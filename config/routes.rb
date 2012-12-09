@@ -10,6 +10,9 @@ Mallowapp::Application.routes.draw do
 
   match '/settings' => 'settings#show', :as => :settings
 
+  match '/admin' => 'admin#show', :as => :admin
+  match '/admin/activate' => 'admin#activate', :as => :activate 
+
   get  '/feedback' => 'feedback#new', :as => :feedback
   post '/feedback' => 'feedback#create'
 

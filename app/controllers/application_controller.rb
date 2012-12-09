@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
+  helper_method :admin_user?
 
   private
     def current_user
@@ -36,6 +37,10 @@ class ApplicationController < ActionController::Base
         flash[:error]= raw(t 'alert.user.auth')
         redirect_to root_url
       end
+    end
+
+    def admin_user?
+      return true if current_user.roles.include?(:admin)
     end
 
   # Stuff errors into flash message

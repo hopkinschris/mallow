@@ -27,6 +27,8 @@ en:
       success: "<strong>Success!</strong> Your settings have been saved."
       denied: "<strong>Access denied!</strong>"
       auth: "<strong>Oops</strong> You need to log in first to access this page."
+    admin:
+      success: "<strong>Success!</strong> User has been activated."
   footer:
     copyright: "&copy; 2012 <a href='http://chocol.it'>chocol.it</a>"
     home_btn: "Home"

@@ -6,6 +6,7 @@ class User
   field :uid
   field :name
   field :email
+  field :roles,       :type => Array,   :default => [:member]
   field :nickname
   field :location
   field :waitlist,    :type => Boolean

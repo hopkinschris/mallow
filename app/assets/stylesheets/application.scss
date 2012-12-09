@@ -423,6 +423,37 @@ input[type="submit"] {
   }
 }
 
+/* Admin */
+
+.admin {
+  ul {
+    display: block;
+    margin-bottom: 1em;
+    li {
+      &:first-child {
+        display: inline-block;
+      }
+      &.location {
+        line-height: 1.8em;
+      }
+      &.count {
+        vertical-align: 1px;
+        display: inline-block;
+        margin: 0.3em 0;
+        font-size: 10px;
+        font-weight: normal;
+        color: #777;
+        padding: 3px 5px;
+        text-transform: uppercase;
+        background-color: #EEE;
+        @include border-radius(3px);
+      }
+    }
+    input {
+    }
+  }
+}
+
 /* Media Queries */
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {

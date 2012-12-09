@@ -67,4 +67,9 @@ module ApplicationHelper
     link_to unfollower_details(:normal, id), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank'
   end
 
+  def welcome_new_user_btn(user)
+    return unless user.waitlist?
+    button_to "Activate", :controller => 'admin', :action => 'activate', :user => user
+  end
+
 end
