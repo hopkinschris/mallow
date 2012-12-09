@@ -39,6 +39,9 @@ group :development do
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
+# New Relic 
+gem 'newrelic_rpm'
+
 # Database
 gem 'mongo', '~> 1.5.2'
 gem 'mongoid'
