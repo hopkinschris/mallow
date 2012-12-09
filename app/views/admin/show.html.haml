@@ -3,5 +3,5 @@
     %li= link_to "@#{user.nickname}", "http://twitter.com/#{user.nickname}", :target => "_blank"
     %li.count= user.followers.count
     %li= user.email
-    %li.location= user.location
+    %li= user.location
     = welcome_new_user_btn(user)
