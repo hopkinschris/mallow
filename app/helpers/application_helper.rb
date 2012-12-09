@@ -72,4 +72,9 @@ module ApplicationHelper
     button_to "Activate", :controller => 'admin', :action => 'activate', :user => user
   end
 
+  def active_user_ticker
+    ticker = User.where(:waitlist => false).count.to_s + ' ' + 'Users'
+    content_tag :div, ticker, :id => 'ticker'
+  end
+
 end

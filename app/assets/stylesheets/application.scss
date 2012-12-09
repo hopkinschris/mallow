@@ -426,29 +426,45 @@ input[type="submit"] {
 /* Admin */
 
 .admin {
-  ul {
-    display: block;
-    margin-bottom: 1em;
-    li {
-      line-height: 1.4em;
-      &:first-child {
-        display: inline-block;
+  section {
+    position: relative;
+    ul {
+      display: block;
+      margin-bottom: 1em;
+      li {
+        line-height: 1.4em;
+        &:first-child {
+          display: inline-block;
+        }
+        &.count {
+          vertical-align: 1px;
+          display: inline-block;
+          margin: 0.3em 0;
+          font-size: 10px;
+          font-weight: normal;
+          color: #777;
+          padding: 3px 5px;
+          text-transform: uppercase;
+          background-color: #EEE;
+          @include border-radius(3px);
+        }
       }
-      &.count {
-        vertical-align: 1px;
-        display: inline-block;
-        margin: 0.3em 0;
-        font-size: 10px;
-        font-weight: normal;
-        color: #777;
-        padding: 3px 5px;
-        text-transform: uppercase;
-        background-color: #EEE;
-        @include border-radius(3px);
+      input[type="submit"] {
+        margin-top: 0.3em;
       }
     }
-    input[type="submit"] {
-      margin-top: 0.3em;
+    #ticker {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0.3em 0;
+      padding: 5px;
+      font-size: 10px;
+      font-weight: normal;
+      text-transform: uppercase;
+      @include border-radius(3px);
+      background-color: $header-color;
+      color: #fff;
     }
   }
 }
