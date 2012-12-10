@@ -3,7 +3,6 @@ en:
   name: mallowapp
   home:
     intro_1: "A simple and beautiful mail service that delivers daily insights on who unfollowed you on Twitter swiftly to your inbox."
-    intro_2: "<em>Mallow is currently in private beta.</em>"
     request_btn: "Request Invite"
     feedback_btn: "Submit Feedback"
     thanks_1: "Thank you, and have a pleasant day!"
