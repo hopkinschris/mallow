@@ -2,18 +2,18 @@
 
   #mail{ :style => "background:#6cd4ff;max-width:535px;margin:0.7em auto;border:1px solid #eaeef1;" }
 
-    %header{ :style => "padding:3em;text-align:center" }
+    %div{ :style => "padding:3em;text-align:center" }
       %img{ :src => "http://mallowapp.herokuapp.com/assets/logo.png", :alt => "logo" ,:style => "width:100px;" }
 
-    %section{ :style => "background:#fff;padding:1.8em 3.1em 0.3em 3.1em;font-weight:300;color:#444;" }
+    %div{ :style => "background:#fff;padding:1.8em 3.1em 0.3em 3.1em;font-weight:300;color:#444;" }
       %p #{@user.name},
       %p Here is a list of your Twitter unfollowers from the past day for you to check out:
 
-    %section{ :style => "background:#fff;padding:1.5em 3.1em 0.3em 3.1em;" }
+    %div{ :style => "background:#fff;padding:1.5em 3.1em 0.3em 3.1em;" }
       - @user.unfollowers.each do |id|
         = mailer_unfollower_link(id, :style => "border-radius:5px;margin:0 1em 1.1em 0;display:inline-block;")
 
-    %footer{ :style => "background:#fff;padding:0.2em 3.1em 2.8em 3.1em;font-weight:300;color:#444;" }
+    %div{ :style => "background:#fff;padding:0.2em 3.1em 2.8em 3.1em;font-weight:300;color:#444;" }
       %p Talk to you soon!
       %a{ :href => "http://twitter.com/hopkinschris", :style => "font-weight:500;text-decoration:none;color:#0881b3" } Christopher
 
