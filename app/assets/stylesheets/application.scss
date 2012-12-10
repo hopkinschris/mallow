@@ -466,6 +466,19 @@ input[type="submit"] {
       background-color: $header-color;
       color: #fff;
     }
+    #requests {
+      position: absolute;
+      top: 25px;
+      right: 0;
+      margin: 0.3em 0;
+      padding: 5px;
+      font-size: 10px;
+      font-weight: normal;
+      text-transform: uppercase;
+      @include border-radius(3px);
+      background-color: #EEE;
+      color: #777;
+    }
   }
 }
 

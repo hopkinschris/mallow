@@ -77,4 +77,10 @@ module ApplicationHelper
     content_tag :div, ticker, :id => 'ticker'
   end
 
+  # Users still on the waitlist
+  def inactive_user_ticker
+    ticker = User.where(:waitlist => true).count.to_s + ' ' + 'Requests'
+    content_tag :div, ticker, :id => 'requests'
+  end
+
 end
