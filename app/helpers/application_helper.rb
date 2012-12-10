@@ -74,13 +74,17 @@ module ApplicationHelper
 
   def active_user_ticker
     ticker = User.where(:waitlist => false).count.to_s + ' ' + 'Users'
-    content_tag :div, ticker, :id => 'ticker'
+    content_tag :li, ticker, :id => 'ticker'
   end
 
   # Users still on the waitlist
   def inactive_user_ticker
     ticker = User.where(:waitlist => true).count.to_s + ' ' + 'Requests'
-    content_tag :div, ticker, :id => 'requests'
+    content_tag :li, ticker, :id => 'requests'
+  end
+
+  def admin_stats
+    content_tag :ul, (active_user_ticker + inactive_user_ticker), :class => 'stats'
   end
 
 end

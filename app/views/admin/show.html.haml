@@ -1,3 +1,5 @@
+= admin_stats
+
 - User.all.each do |user|
   %ul
     %li= link_to "@#{user.nickname}", "http://twitter.com/#{user.nickname}", :target => "_blank"
@@ -5,6 +7,3 @@
     %li= user.email
     %li= user.location
     = welcome_new_user_btn(user)
-
-= active_user_ticker
-= inactive_user_ticker
