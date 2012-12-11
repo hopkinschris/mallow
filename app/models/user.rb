@@ -50,7 +50,14 @@ class User
   end
 
   def get_followers
-    self.followers = Twitter.follower_ids(self.nickname).collection
+    cursor = "-1"
+    while cursor != 0 do
+      followers = Twitter.follower_ids(self.nickname, {:cursor => cursor})
+      cursor = followers.next_cursor
+      self.followers << followers.ids
+      sleep(2)
+    end
+    self.followers.flatten!
     save
   end
 
@@ -72,7 +79,15 @@ class User
     if self.waitlist? || !self.mail_opt?
       puts "#{self.name} is still on the waitlist or has opted out."
     else
-      fresh_followers = Twitter.follower_ids(self.nickname).collection
+      cursor = "-1"
+      fresh_followers = []
+      while cursor != 0 do
+        followers = Twitter.follower_ids(self.nickname, {:cursor => cursor})
+        cursor = followers.next_cursor
+        fresh_followers << followers.ids
+        sleep(2)
+      end
+      fresh_followers.flatten!
       diff = self.followers - fresh_followers
       if diff.size > 0
         unfollowers.replace(diff)

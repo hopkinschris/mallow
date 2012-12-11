@@ -23,7 +23,15 @@ module ApplicationHelper
     end
     src = Twitter.user(id).profile_image_url(size)
     handle = '@' + (Twitter.user(id).screen_name).downcase
-    user_followers = Twitter.follower_ids(@user.uid.to_i).collection
+    cursor = "-1"
+    user_followers = []
+    while cursor != 0 do
+      followers = Twitter.follower_ids(@user.uid.to_i, {:cursor => cursor})
+      cursor = followers.next_cursor
+      user_followers << followers.ids
+      sleep(2)
+    end
+    user_followers.flatten!
     unfollower_status =
       if user_followers.include?(id)
         content_tag(:span, "You Follow", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
@@ -49,7 +57,15 @@ module ApplicationHelper
   def unfollower_details(size, id)
     src = Twitter.user(id).profile_image_url(size)
     handle = '@' + (Twitter.user(id).screen_name).downcase
-    current_user_followers = Twitter.follower_ids(current_user.uid.to_i).collection
+    cursor = "-1"
+    current_user_followers = []
+    while cursor != 0 do
+      followers = Twitter.follower_ids(current_user.uid.to_i, {:cursor => cursor})
+      cursor = followers.next_cursor
+      current_user_followers << followers.ids
+      sleep(2)
+    end
+    current_user_followers.flatten!
     unfollower_status =
       if current_user_followers.include?(id)
         content_tag(:span, "You Follow", :class => 'status following')
