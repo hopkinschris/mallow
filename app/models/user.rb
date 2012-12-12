@@ -93,6 +93,7 @@ class User
         unfollowers.replace(diff)
         self.followers.replace(fresh_followers)
         save
+        puts "Sending mail to #{self.nickname}..."
         UnfollowerMailer.unfollowers_mail(self).deliver
         diff.each do |id|
           name = Twitter.user(id).screen_name
