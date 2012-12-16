@@ -95,10 +95,6 @@ class User
         save
         puts "Sending mail to #{self.nickname}..."
         UnfollowerMailer.unfollowers_mail(self).deliver
-        diff.each do |id|
-          name = Twitter.user(id).screen_name
-          puts "@#{Twitter.user(name).screen_name} unfollowed #{self.name}."
-        end
       else
         unfollowers.clear
         save
