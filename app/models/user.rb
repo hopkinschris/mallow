@@ -89,9 +89,22 @@ class User
       end
       fresh_followers.flatten!
       diff = self.followers - fresh_followers
+      self.followers.replace(fresh_followers)
+
+      # Handle API exceptions/errors gracefully
+      diff.each do |t|
+        begin
+          response = Twitter.user(t)
+        rescue => e
+          logger.error "#{e.message}."
+        end
+        if response.nil?
+          diff.delete(t)
+        end
+      end
+
       if diff.size > 0
         unfollowers.replace(diff)
-        self.followers.replace(fresh_followers)
         save
         puts "Sending mail to #{self.nickname}..."
         UnfollowerMailer.unfollowers_mail(self).deliver
