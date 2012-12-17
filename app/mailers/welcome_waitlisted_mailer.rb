@@ -4,6 +4,7 @@ class WelcomeWaitlistedMailer < ActionMailer::Base
   sendgrid_category 'Welcome Waitlisted Mail'
 
   default :from => "chris@mallowapp.com"
+  default :fromname => "Mallow"
 
   helper ApplicationHelper
 

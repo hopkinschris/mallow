@@ -4,6 +4,7 @@ class WelcomeMailer < ActionMailer::Base
   sendgrid_category 'Welcome Mail'
 
   default :from => "chris@mallowapp.com"
+  default :fromname => "Mallow"
 
   helper ApplicationHelper
 
