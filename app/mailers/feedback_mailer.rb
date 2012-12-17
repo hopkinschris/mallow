@@ -12,4 +12,9 @@ class FeedbackMailer < ActionMailer::Base
     @feedback = feedback
     mail( :subject => "Feedback submitted on #{Time.now.strftime("%b. %e")}" )
   end
+
+  def task_mail(count)
+    @count = count
+    mail( :subject => "$rake get_unfollowers for #{Time.now.strftime("%b. %e")} complete")
+  end
 end

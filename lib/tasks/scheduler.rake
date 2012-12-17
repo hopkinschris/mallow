@@ -3,9 +3,13 @@
 desc "Get unfollowers"
 task :get_unfollowers => :environment do
   puts "Getting unfollowers..."
+  task_count = 0
   User.all.each do |u|
     u.get_unfollowers
+    task_count += 1
   end
+  @count = task_count.to_s
+  FeedbackMailer.task_mail(@count).deliver
   puts "Finished."
 end
 
