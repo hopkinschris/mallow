@@ -25,7 +25,7 @@ gem 'omniauth', '>= 1.1.0'
 
 # OmniAuth-Twitter
 gem 'omniauth-twitter'
-gem "twitter", "~> 3.7.0"
+gem 'twitter', '~> 3.7.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -37,6 +37,7 @@ end
 group :development do
   gem 'letter_opener'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 # New Relic 
