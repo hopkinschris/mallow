@@ -1,10 +1,13 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "Hansel#{n}"
+  end
   sequence :email do |n|
     "hansel#{n}@mail.com"
   end
   factory :user do
     provider "twitter"
-    name "Hansel Magnum"
+    name { generate(:name) }
     email { generate(:email) }
     nickname "hansel"
     location "Sweden"

@@ -76,8 +76,8 @@ class User
   end
 
   def get_unfollowers
-    if self.waitlist? || !self.mail_opt?
-      puts "#{self.name} is still on the waitlist or has opted out."
+    if !self.mail_opt?
+      puts "#{self.name} has opted out of receiving mail."
     else
       cursor = "-1"
       fresh_followers = []
