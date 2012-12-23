@@ -7,8 +7,8 @@ class AdminController < ApplicationController
   end
 
   def activate
+    user = User.find(params[:user])
     if user.email?
-      user = User.find(params[:user])
       user.waitlist = false
       user.save
       WelcomeMailer.welcome_mail(user).deliver
