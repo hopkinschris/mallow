@@ -7,13 +7,9 @@ task :get_unfollowers_b1 => :environment do
   u = User.where(:waitlist => false)
   i = (u.count/2).to_i
   n = u.to(i)
-  task_count = 0
   n.each do |user|
     user.get_unfollowers
-    task_count += 1
   end
-  @count = task_count.to_s
-  FeedbackMailer.task_mail(@count).deliver
   puts "Finished."
 end
 
@@ -26,13 +22,9 @@ task :get_unfollowers_b2 => :environment do
   u = User.where(:waitlist => false)
   i = (u.count/2).to_i
   n = u.from(i+1)
-  task_count = 0
   n.each do |user|
     user.get_unfollowers
-    task_count += 1
   end
-  @count = task_count.to_s
-  FeedbackMailer.task_mail(@count).deliver
   puts "Finished."
 end
 
