@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Foundation
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.11'
 gem 'rake'
 gem 'heroku'
 gem 'rack-rewrite'
