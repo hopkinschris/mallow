@@ -457,25 +457,28 @@ input[type="submit"] {
       display: inline-block;
       float: right;
       text-align: right;
-      #ticker {
+      #ticker,
+      #requests,
+      #opt_outs {
         margin: 0.3em 0;
         padding: 3px 5px;
         font-size: 10px;
         font-weight: normal;
         text-transform: uppercase;
         @include border-radius(3px);
+      }
+      #ticker {
         background-color: $header-color;
         color: #fff;
       }
       #requests {
-        margin: 0.3em 0;
-        padding: 3px 5px;
-        font-size: 10px;
-        font-weight: normal;
-        text-transform: uppercase;
-        @include border-radius(3px);
+        margin-bottom: 0.6em;
         background-color: #EEE;
         color: #777;
+      }
+      #opt_outs {
+        background-color: #373f4a;
+        color: #fff;
       }
     }
   }

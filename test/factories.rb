@@ -1,3 +1,6 @@
+# e.g. I want to create 10 mock users
+# $ FactoryGirl.create_list(:user, 10)
+
 FactoryGirl.define do
   sequence :name do |n|
     "Hansel#{n}"

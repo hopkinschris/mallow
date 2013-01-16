@@ -99,8 +99,14 @@ module ApplicationHelper
     content_tag :li, ticker, :id => 'requests'
   end
 
+  # Users who opted out of the daily email
+  def active_user_daily_opt_out_ticker
+    ticker = User.where(:waitlist => false, :mail_opt => false).count.to_s + ' ' + 'Opt Outs'
+    content_tag :li, ticker, :id => 'opt_outs'
+  end
+
   def admin_stats
-    content_tag :ul, (active_user_ticker + inactive_user_ticker), :class => 'stats'
+    content_tag :ul, (active_user_ticker + inactive_user_ticker + active_user_daily_opt_out_ticker), :class => 'stats'
   end
 
 end
