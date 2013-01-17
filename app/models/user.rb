@@ -79,6 +79,9 @@ class User
     if !self.mail_opt?
       puts "#{self.name} has opted out of receiving mail."
     else
+      
+      # Step through paged array of results returned from API
+      # This is for Twitter power users (5000+ followers)
       cursor = "-1"
       fresh_followers = []
       while cursor != 0 do
@@ -92,6 +95,7 @@ class User
       self.followers.replace(fresh_followers)
 
       # Handle API exceptions/errors gracefully
+      # Pull out suspended user accounts from diff
       diff.each do |t|
         begin
           response = Twitter.user(t)
