@@ -460,12 +460,19 @@ input[type="submit"] {
       #ticker,
       #requests,
       #opt_outs {
-        margin: 0.3em 0;
+        display: inline-block;
+        margin: 0.3em;
         padding: 3px 5px;
         font-size: 10px;
         font-weight: normal;
         text-transform: uppercase;
         @include border-radius(3px);
+        &:first-child {
+          margin-left: 0 !important;
+        }
+        &:last-child {
+          margin-right: 0 !important;
+        }
       }
       #ticker {
         background-color: $header-color;
@@ -473,11 +480,11 @@ input[type="submit"] {
       }
       #requests {
         margin-bottom: 0.6em;
-        background-color: #EEE;
-        color: #777;
+        background-color: #e90060;
+        color: #fff;
       }
       #opt_outs {
-        background-color: #373f4a;
+        background-color: #a5e5e5;
         color: #fff;
       }
     }
@@ -541,6 +548,9 @@ input[type="submit"] {
   .admin {
     input[type="submit"] {
       width: auto;
+    }
+    ul.stats {
+      float: none !important;
     }
   }
 

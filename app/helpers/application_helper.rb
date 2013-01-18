@@ -106,7 +106,7 @@ module ApplicationHelper
   end
 
   def admin_stats
-    content_tag :ul, (active_user_ticker + inactive_user_ticker + active_user_daily_opt_out_ticker), :class => 'stats'
+    content_tag :ul, (active_user_ticker + active_user_daily_opt_out_ticker + inactive_user_ticker), :class => 'stats'
   end
 
 end
