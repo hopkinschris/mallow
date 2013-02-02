@@ -3,7 +3,7 @@ Mallow
 
 <%= @user.name %>,
 
-Here is a list of your Twitter unfollowers from the past day for you to check out.
+Here is a list of your Twitter unfollowers from the past day:
 
 <% @user.unfollowers.each do |id| %>
 @<%= Twitter.user(id).screen_name %>
