@@ -459,7 +459,8 @@ input[type="submit"] {
       text-align: right;
       #ticker,
       #requests,
-      #opt_outs {
+      #opt_outs,
+      #mail_sent {
         display: inline-block;
         margin: 0.3em;
         padding: 3px 5px;
@@ -485,6 +486,10 @@ input[type="submit"] {
       }
       #opt_outs {
         background-color: #a5e5e5;
+        color: #fff;
+      }
+      #mail_sent {
+        background-color: #36e8ac;
         color: #fff;
       }
     }

@@ -105,8 +105,26 @@ module ApplicationHelper
     content_tag :li, ticker, :id => 'opt_outs'
   end
 
+  # Total unfollower mail ("requests") sent via Sendgrid
+  def mail_sent_ticker
+    # Instantiate the Statistics object
+    statistics = SendgridToolkit::Statistics.new
+    begin
+      # Retrieve statistics from API
+      stats = statistics.retrieve_aggregate :category => "Unfollower Mail"
+    rescue => e
+      logger.error "#{ e.message }"
+    end
+    if stats.nil?
+      ticker = '! Mails'
+    else
+      ticker = stats.parsed_response[0]["requests"].to_s + ' ' + 'Mails'
+    end
+    content_tag :li, ticker, :id => 'mail_sent'
+  end
+
   def admin_stats
-    content_tag :ul, (active_user_ticker + active_user_daily_opt_out_ticker + inactive_user_ticker), :class => 'stats'
+    content_tag :ul, (active_user_ticker + active_user_daily_opt_out_ticker + inactive_user_ticker + mail_sent_ticker), :class => 'stats'
   end
 
 end

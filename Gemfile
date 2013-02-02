@@ -15,6 +15,9 @@ gem 'jquery-rails'
 # Email
 gem 'sendgrid'
 
+# Ruby wrapper for Sendgrid API
+gem 'sendgrid_toolkit', '>= 1.1.1'
+
 # Run JavaScript code from Ruby
 gem 'execjs'
 # Embed the V8 JavaScript Interpreter into Ruby
