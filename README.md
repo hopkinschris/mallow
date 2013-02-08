@@ -3,7 +3,7 @@ mallowapp
 
 Get mail when someone unfollows you on Twitter.
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/hopkinschris/mallowapp)
+[![Code Climate](https://codeclimate.com/github/hopkinschris/mallowapp.png)](https://codeclimate.com/github/hopkinschris/mallowapp)
 
 Authors
 -------
