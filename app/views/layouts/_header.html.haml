@@ -1,0 +1,26 @@
+%header
+  %nav
+    %a#logo{ :href => "#{ root_url }" }= t 'name'
+    %ul
+      - if user_signed_in?
+        - if current_user.roles.include? :admin
+          %li
+            %a{ :href => admin_path, :data => { :active => ((controller_name == 'admin') ? 'true' : 'false') } }= t 'nav.admin'
+        %li
+          %a{ :href => settings_path, :data => { :active => ((controller_name == 'settings') ? 'true' : 'false') } }= t 'nav.settings'
+        %li
+          %a{ :href => feedback_path, :data => { :active => ((controller_name == 'feedback') ? 'true' : 'false') } }= t 'nav.feedback'
+        %li
+          %a{ :href => logout_path }= t 'nav.log_out'
+      - else
+        %li
+          %a{ :href => feedback_path, :data => { :active => ((controller_name == 'feedback') ? 'true' : 'false') } }= t 'nav.feedback'
+        %li
+          %a{ :href => request_path }= t 'nav.log_in'
+    - if user_signed_in?
+      .pull-right
+        %label{ :style => ('display: block' if user_signed_in?) }= t "nav.nickname", :nickname => current_user.nickname
+    - else
+      .pull-right
+        %label= t 'nav.label'
+        %a.btn{ :href => request_path }= t 'nav.request'

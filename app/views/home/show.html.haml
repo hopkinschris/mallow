@@ -1,8 +1,8 @@
-- title(t 'name')
+- title(t 'home.page_title')
 
 - if user_signed_in? && current_user.waitlist? && current_user.email?
   - # User signed in but is on waitlist
-  %p= raw(t 'home.thanks_1')
+  %p= raw(t 'home.thanks_1', :wait => User.where(:waitlist => true).count)
   %p= raw(t 'home.thanks_2', :email => current_user.email)
 
 - elsif user_signed_in? && current_user.waitlist? && current_user.email.blank?
@@ -19,12 +19,16 @@
     - if current_user.unfollowers.count == 0
       %p.none= t 'home.placeholder'
     - else
+      %h2= unfollowers_counter(current_user)
       - current_user.unfollowers.each do |id|
         = unfollower_link(id)
 
 - else
-  - # User not signed in
-  %p= raw(t 'home.intro_1')
+  %aside
+    - # User not signed in
+    %h2= t 'home.intro_1'
+    %p= raw(t 'home.intro_2')
 
-  = form_tag(request_path) do
-    = submit_tag(t 'home.request_btn')
+    = form_tag(request_path) do
+      = submit_tag(t 'home.request_btn')
+  #phone

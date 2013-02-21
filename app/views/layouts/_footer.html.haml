@@ -1,6 +1,6 @@
 %footer
   .copyright= raw(t 'footer.copyright')
-  .footer-nav
+  .footer-nav{ :style => ("text-align: center" unless user_signed_in?) }
     = link_to((t 'footer.home_btn'), root_url)
     \/
     - if user_signed_in?

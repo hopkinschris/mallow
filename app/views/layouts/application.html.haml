@@ -2,8 +2,7 @@
 
 %body{ :class => controller_name, :id => action_name }
 
-  %header
-    %h1= t 'name'
+  = render 'layouts/header'
     
   %section
     = render 'layouts/flash_messages'

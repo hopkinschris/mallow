@@ -1,24 +1,32 @@
+%style
+  - # Remove label from layout on mobile devices
+  @media all and (max-width: 480px) { label { display:none; } }
+  
 %body{ :style => "background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#444;" }
 
-  #mail{ :style => "background:#6cd4ff;max-width:535px;margin:0.7em auto;border:1px solid #eaeef1;" }
+  #mail{ :style => "max-width:535px;margin:0.7em auto;" }
 
-    %div{ :style => "padding:3em;text-align:center;" }
-      %img{ :src => "http://mallowapp.herokuapp.com/assets/logo.png", :alt => "logo" ,:style => "width:100px;" }
+    %div{ :style => "padding:1.5em 2.9em 1em 2.9em;" }
+      %img{ :src => "http://mallowapp.herokuapp.com/assets/logo.png", :width => "108px", :height => "30px", :alt => "logo" ,:style => "width:108px;margin-bottom:1.5em;" }
+      %label{ :style => "float:right;font-size:15px;vertical-align:-8px;color:#ddd;border: 2px solid #eee;font-weight:400;padding: 5px 6px 6px 6px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px;" } @#{ @user.nickname }
+      %span{ :style => "margin:0 auto;display:block;max-width:457px;border-bottom:1px solid #eee;"}
 
-    %div{ :style => "display:block;background:#fff;padding:2.5em 3.5em 0.3em 3.5em;font-weight:300;color:#444;" }
-      %p Hi #{@user.name},
-
+    %div{ :style => "background:#fff;padding:0 2.3em 0em 2.3em;font-size:17px;font-weight:300;color:#444;" }
       %p 
-        %strong We have received your request for an invite to Mallow. 
+        %h2{ :style => "color:#222;font-size:22px;line-height:1.15em;margin-bottom:0.8em;font-weight:700;" } Your invite request has been received. 
       
+      %p Hi #{ @user.name },
+
       %p Please keep an eye on your inbox! You should receive a note sometime soon letting you know your account is ready. 
 
       %p 
         Mallow is currently in private beta and I love hearing feedback from people using the service so I can continually work on making it better. Any issues, ideas, or just want to say "Hello" please don't hesitate to shoot me a note via the 
-        %a{ :href => "http://mallowapp.com/feedback", :style => "font-weight:500;text-decoration:none;color:#0881b3" } 
+        %a{ :href => "http://mallowapp.com/feedback", :style => "color: #0881B3;text-decoration: none;border-bottom:1px solid;" } 
           feedback
         page.
 
-    %div{ :style => "display:block;background:#fff;padding:0.2em 3.5em 3.3em 3.5em;font-weight:300;color:#444;" }
+    %div{ :style => "background:#fff;padding:0 2.3em 3.3em 2.3em;font-size:17px;font-weight:300;color:#444;" }
       %p Talk to you soon!
-      %a{ :href => "http://twitter.com/hopkinschris", :style => "font-weight:500;text-decoration:none;color:#0881b3" } Christopher
+      %span --
+      %br
+      %a{ :href => "http://twitter.com/hopkinschris", :style => "font-weight:300;text-decoration:none;color:#0881b3;" } @hopkinschris

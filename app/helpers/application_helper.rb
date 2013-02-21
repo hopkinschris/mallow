@@ -34,19 +34,19 @@ module ApplicationHelper
     user_followers.flatten!
     unfollower_status =
       if user_followers.include?(id)
-        content_tag(:span, "You Follow", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#fff;padding:2px 5px;text-transform:uppercase;background-color:#6cd4ff;border-radius:3px;")
+        content_tag(:span, "Following", :class => 'status', :style => "font-size:0.9em;line-height:2em;color:#6cd4ff;")
       else
-        content_tag(:span, "Don't Follow", :class => 'status', :style => "font-size:0.8em;line-height:2em;color:#777;padding:2px 5px;text-transform:uppercase;background-color:#EEE;border-radius:3px;")
+        content_tag(:span, "Not Following", :class => 'status', :style => "font-size:0.9em;line-height:2em;color:#999;")
       end
     details = 
-      content_tag(:li, handle, :class => 'handle', :style => "line-height:1.3em;-webkit-font-smoothing:antialiased;list-style:none;color:#444;") +
+      content_tag(:li, handle, :class => 'handle', :style => "line-height:1.3em;-webkit-font-smoothing:antialiased;list-style:none;font-weight:400;font-size:17px;color:#444;margin-left:0px;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
     content_tag(:ul, details, :style => "padding:0;margin:0 1em 0 0;vertical-align:top;display:inline-block;")
   end
 
   def mailer_unfollower_link(id, options={})
-    link_to mailer_unfollower_details(:normal, id, options), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank', :style => "display:inline-block;text-decoration:none;"
+    link_to(mailer_unfollower_details(:normal, id, options), "http://twitter.com/#{Twitter.user(id).screen_name}", :target => '_blank', :style => "display:inline-block;text-decoration:none;") + "</br>".html_safe
   end
 
   # Can return four different sizes from Twitter API
@@ -68,9 +68,9 @@ module ApplicationHelper
     current_user_followers.flatten!
     unfollower_status =
       if current_user_followers.include?(id)
-        content_tag(:span, "You Follow", :class => 'status following')
+        content_tag(:span, "Following", :class => 'status following')
       else
-        content_tag(:span, "Don't Follow", :class => 'status')
+        content_tag(:span, "Not Following", :class => 'status')
       end
     details =
       content_tag(:span, handle, :class => 'handle') +
@@ -125,6 +125,12 @@ module ApplicationHelper
 
   def admin_stats
     content_tag :ul, (active_user_ticker + active_user_daily_opt_out_ticker + inactive_user_ticker + mail_sent_ticker), :class => 'stats'
+  end
+
+  def unfollowers_counter(user)
+    text = (user.unfollowers.count == 1) ? "unfollower" : "unfollowers"
+    counter = "You have #{ user.unfollowers.count } #{ text }."
+    counter
   end
 
 end
