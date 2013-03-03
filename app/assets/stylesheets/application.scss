@@ -72,8 +72,8 @@ html {
   @include smooth-fonts;
 }
 
-header, 
-section, 
+header,
+section,
 footer {
   padding: 0 10px;
   margin: 0 auto;
@@ -160,14 +160,14 @@ nav {
 }
 
 header,
-section, 
+section,
 footer {
   padding: 0 10px;
   max-width: 640px;
   margin-bottom: 2em;
 }
 
-body, 
+body,
 input,
 textarea {
   color: #444;
@@ -216,16 +216,16 @@ section {
 
 aside {
   max-width: 280px;
-}
-
-#phone {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  width: 309px;
-  height: 211px;
-  background: url(../assets/phone.png) no-repeat;
-  background-size: 309px 211px;
+  position: relative;
+  #phone {
+    position: absolute;
+    right: -339px;
+    bottom: 0;
+    width: 309px;
+    height: 211px;
+    background: url(../assets/phone.png) no-repeat;
+    background-size: 309px 211px;
+  }
 }
 
 footer {
