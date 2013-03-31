@@ -41,7 +41,7 @@ en:
       success: "<strong>Success!</strong> User has been activated."
       error: "<strong>Oops.</strong> User has not provided a valid email address."
   footer:
-    copyright: "&copy; 2012 <a href='http://chocol.it'>chocol.it</a>"
+    copyright: "&copy; 2013 <a href='http://chocol.it'>chocol.it</a>"
     home_btn: "Home"
     feedback_btn: "Feedback"
     settings_btn: "Settings"
