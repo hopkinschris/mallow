@@ -14,18 +14,18 @@ class User
   field :followers,   :type => Array,   :default => []
   field :unfollowers, :type => Array,   :default => []
 
-  attr_accessible :provider, 
-                  :uid, 
-                  :name, 
-                  :email, 
-                  :nickname, 
-                  :location, 
+  attr_accessible :provider,
+                  :uid,
+                  :name,
+                  :email,
+                  :nickname,
+                  :location,
                   :waitlist,
                   :mail_opt,
                   :followers,
                   :unfollowers
 
-  validates_presence_of   :email, :on => :update, 
+  validates_presence_of   :email, :on => :update,
                                   :unless => Proc.new { |user| user.email.nil? }
 
   validates_uniqueness_of :email, :unless => Proc.new { |user| user.email.nil? }
@@ -78,8 +78,11 @@ class User
   def get_unfollowers
     if !self.mail_opt?
       puts "#{self.name} has opted out of receiving mail."
+    elsif Twitter.user("#{ self.nickname }").protected
+      self.waitlist = true
+      self.save
     else
-      
+
       # Step through paged array of results returned from API
       # This is for Twitter power users (5000+ followers)
       cursor = "-1"
