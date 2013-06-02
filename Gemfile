@@ -47,7 +47,7 @@ end
 gem 'newrelic_rpm'
 
 # Database
-gem 'mongo', '~> 1.5.2'
+gem 'mongo', '~> 1.8.6'
 gem 'mongoid'
 gem 'bson'
 gem 'bson_ext'
