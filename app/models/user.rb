@@ -78,10 +78,13 @@ class User
   def get_unfollowers
     if !self.mail_opt?
       puts "#{self.name} has opted out of receiving mail."
-    elsif Twitter.user("#{ self.nickname }").protected
-      self.waitlist = true
-      self.save
     else
+
+      # If user has protected tweets put them back on the waitlist
+      if Twitter.user("#{ self.nickname }").protected
+        self.waitlist = true
+        self.save
+      end
 
       # Step through paged array of results returned from API
       # This is for Twitter power users (5000+ followers)
