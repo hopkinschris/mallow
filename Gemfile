@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Foundation
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 gem 'rake'
 gem 'heroku'
 gem 'rack-rewrite'
@@ -28,7 +28,7 @@ gem 'omniauth', '>= 1.1.0'
 
 # OmniAuth-Twitter
 gem 'omniauth-twitter'
-gem 'twitter', '~> 3.7.0'
+gem 'twitter', '~> 4.7.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -43,7 +43,7 @@ group :development do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
-# New Relic 
+# New Relic
 gem 'newrelic_rpm'
 
 # Database
