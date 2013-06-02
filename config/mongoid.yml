@@ -1,10 +1,16 @@
 development:
-  host: localhost
-  database: mallowapp_development
+  sessions:
+    default:
+      database: mallowapp_development
+      hosts:
+        - localhost
 
 test:
-  host: localhost
-  database: mallowapp_test
+  sessions:
+    default:
+      database: mallowapp_test
+      hosts:
+        - localhost
 
 production:
   uri: <%= ENV['MONGOHQ_URL'] %>
