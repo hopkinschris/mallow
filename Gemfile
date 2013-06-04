@@ -47,6 +47,9 @@ end
 # New Relic
 gem 'newrelic_rpm'
 
+# Key Value Store
+gem 'redis'
+
 # Database
 gem 'mongo', '~> 1.8.6'
 gem 'mongoid'
