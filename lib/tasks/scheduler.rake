@@ -1,60 +1,61 @@
-# Daily task run with Heroku Scheduler
-# Batch 1 - 25% of active users
+BATCH_SIZE = 10
+
+
 # Time set to 13:00 UTC
 desc "Get unfollowers (Batch 1)"
 task :get_unfollowers_b1 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
-  i = (u.count/4).to_i
-  n = u.to(i)
+  REDIS.set("pointer", "10")
+  n = u[0...BATCH_SIZE]
   n.each do |user|
     user.get_unfollowers
   end
   puts "Finished Batch 1."
 end
 
-# Daily task run with Heroku Scheduler
-# Batch 2 - other 25% of active users
 # Time set to 14:30 UTC
 desc "Get unfollowers (Batch 2)"
 task :get_unfollowers_b2 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
-  i = (u.count/4).to_i
-  n = u.from(i+1)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
   n.each do |user|
     user.get_unfollowers
   end
+  REDIS.set("pointer", k)
   puts "Finished Batch 2."
 end
 
-# Daily task run with Heroku Scheduler
-# Batch 3 - other 25% of active users
 # Time set to 14:30 UTC
 desc "Get unfollowers (Batch 3)"
 task :get_unfollowers_b3 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
-  i = (u.count/4).to_i
-  n = u.from(i+2)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
   n.each do |user|
     user.get_unfollowers
   end
+  REDIS.set("pointer", k)
   puts "Finished Batch 3."
 end
 
-# Daily task run with Heroku Scheduler
-# Batch 4 - other 25% of active users
 # Time set to 14:30 UTC
 desc "Get unfollowers (Batch 4)"
 task :get_unfollowers_b4 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
-  i = (u.count/4).to_i
-  n = u.from(i+3)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
   n.each do |user|
     user.get_unfollowers
   end
+  REDIS.set("pointer", k)
   puts "Finished Batch 4."
 end
 
