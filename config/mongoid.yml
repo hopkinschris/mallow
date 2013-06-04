@@ -1,7 +1,7 @@
 development:
   sessions:
     default:
-      database: mallowapp_development
+      database: mallowapp
       hosts:
         - localhost
 
