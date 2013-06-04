@@ -14,7 +14,7 @@ task :get_unfollowers_b1 => :environment do
   puts "Finished Batch 1."
 end
 
-# Time set to 14:30 UTC
+# Time set to 13:30 UTC
 desc "Get unfollowers (Batch 2)"
 task :get_unfollowers_b2 => :environment do
   puts "Getting unfollowers..."
@@ -44,7 +44,7 @@ task :get_unfollowers_b3 => :environment do
   puts "Finished Batch 3."
 end
 
-# Time set to 14:30 UTC
+# Time set to 15:00 UTC
 desc "Get unfollowers (Batch 4)"
 task :get_unfollowers_b4 => :environment do
   puts "Getting unfollowers..."
