@@ -1,5 +1,4 @@
 BATCH_SIZE = 5
-NO_OF_BATCHES = (User.where(waitlist: false).count)/BATCH_SIZE
 
 
 # Time set to 12:30 UTC
