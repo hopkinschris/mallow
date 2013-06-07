@@ -38,7 +38,7 @@ module ApplicationHelper
       else
         content_tag(:span, "Not Following", :class => 'status', :style => "font-size:0.9em;line-height:2em;color:#999;")
       end
-    details = 
+    details =
       content_tag(:li, handle, :class => 'handle', :style => "line-height:1.3em;-webkit-font-smoothing:antialiased;list-style:none;font-weight:400;font-size:17px;color:#444;margin-left:0px;") +
       unfollower_status
     content_tag(:img, nil, :src => src, :class => 'avatar', :style => style) +
@@ -86,6 +86,11 @@ module ApplicationHelper
   def welcome_new_user_btn(user)
     return unless user.waitlist?
     button_to "Activate", :controller => 'admin', :action => 'activate', :user => user
+  end
+
+  def deactivate_user_btn(user)
+    return if user.waitlist?
+    button_to "Deactivate", :controller => 'admin', :action => 'deactivate', :user => user
   end
 
   def active_user_ticker
