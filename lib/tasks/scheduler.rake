@@ -1,12 +1,13 @@
-BATCH_SIZE = 10
+BATCH_SIZE = 5
+NO_OF_BATCHES = (User.where(waitlist: false).count)/BATCH_SIZE
 
 
-# Time set to 13:00 UTC
+# Time set to 12:30 UTC
 desc "Get unfollowers (Batch 1)"
 task :get_unfollowers_b1 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
-  REDIS.set("pointer", "10")
+  REDIS.set("pointer", BATCH_SIZE)
   n = u[0...BATCH_SIZE]
   n.each do |user|
     user.get_unfollowers
@@ -14,7 +15,7 @@ task :get_unfollowers_b1 => :environment do
   puts "Finished Batch 1."
 end
 
-# Time set to 13:30 UTC
+# Time set to 13:00 UTC
 desc "Get unfollowers (Batch 2)"
 task :get_unfollowers_b2 => :environment do
   puts "Getting unfollowers..."
@@ -29,7 +30,7 @@ task :get_unfollowers_b2 => :environment do
   puts "Finished Batch 2."
 end
 
-# Time set to 14:30 UTC
+# Time set to 13:30 UTC
 desc "Get unfollowers (Batch 3)"
 task :get_unfollowers_b3 => :environment do
   puts "Getting unfollowers..."
@@ -44,7 +45,7 @@ task :get_unfollowers_b3 => :environment do
   puts "Finished Batch 3."
 end
 
-# Time set to 15:00 UTC
+# Time set to 14:00 UTC
 desc "Get unfollowers (Batch 4)"
 task :get_unfollowers_b4 => :environment do
   puts "Getting unfollowers..."
@@ -57,6 +58,66 @@ task :get_unfollowers_b4 => :environment do
   end
   REDIS.set("pointer", k)
   puts "Finished Batch 4."
+end
+
+# Time set to 14:30 UTC
+desc "Get unfollowers (Batch 5)"
+task :get_unfollowers_b5 => :environment do
+  puts "Getting unfollowers..."
+  u = User.where(:waitlist => false)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
+  n.each do |user|
+    user.get_unfollowers
+  end
+  REDIS.set("pointer", k)
+  puts "Finished Batch 5."
+end
+
+# Time set to 15:00 UTC
+desc "Get unfollowers (Batch 6)"
+task :get_unfollowers_b6 => :environment do
+  puts "Getting unfollowers..."
+  u = User.where(:waitlist => false)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
+  n.each do |user|
+    user.get_unfollowers
+  end
+  REDIS.set("pointer", k)
+  puts "Finished Batch 6."
+end
+
+# Time set to 15:30 UTC
+desc "Get unfollowers (Batch 7)"
+task :get_unfollowers_b7 => :environment do
+  puts "Getting unfollowers..."
+  u = User.where(:waitlist => false)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
+  n.each do |user|
+    user.get_unfollowers
+  end
+  REDIS.set("pointer", k)
+  puts "Finished Batch 7."
+end
+
+# Time set to 16:00 UTC
+desc "Get unfollowers (Batch 8)"
+task :get_unfollowers_b8 => :environment do
+  puts "Getting unfollowers..."
+  u = User.where(:waitlist => false)
+  i = REDIS.get("pointer").to_i
+  k = i + BATCH_SIZE
+  n = u[i...k]
+  n.each do |user|
+    user.get_unfollowers
+  end
+  REDIS.set("pointer", k)
+  puts "Finished Batch 8."
 end
 
 # You can pass in a single user_id
