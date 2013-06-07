@@ -65,58 +65,12 @@ task :get_unfollowers_b5 => :environment do
   puts "Getting unfollowers..."
   u = User.where(:waitlist => false)
   i = REDIS.get("pointer").to_i
-  k = i + BATCH_SIZE
-  n = u[i...k]
+  n = u[i..-1]
   n.each do |user|
     user.get_unfollowers
   end
   REDIS.set("pointer", k)
   puts "Finished Batch 5."
-end
-
-# Time set to 15:00 UTC
-desc "Get unfollowers (Batch 6)"
-task :get_unfollowers_b6 => :environment do
-  puts "Getting unfollowers..."
-  u = User.where(:waitlist => false)
-  i = REDIS.get("pointer").to_i
-  k = i + BATCH_SIZE
-  n = u[i...k]
-  n.each do |user|
-    user.get_unfollowers
-  end
-  REDIS.set("pointer", k)
-  puts "Finished Batch 6."
-end
-
-# Time set to 15:30 UTC
-desc "Get unfollowers (Batch 7)"
-task :get_unfollowers_b7 => :environment do
-  puts "Getting unfollowers..."
-  u = User.where(:waitlist => false)
-  i = REDIS.get("pointer").to_i
-  k = i + BATCH_SIZE
-  n = u[i...k]
-  n.each do |user|
-    user.get_unfollowers
-  end
-  REDIS.set("pointer", k)
-  puts "Finished Batch 7."
-end
-
-# Time set to 16:00 UTC
-desc "Get unfollowers (Batch 8)"
-task :get_unfollowers_b8 => :environment do
-  puts "Getting unfollowers..."
-  u = User.where(:waitlist => false)
-  i = REDIS.get("pointer").to_i
-  k = i + BATCH_SIZE
-  n = u[i...k]
-  n.each do |user|
-    user.get_unfollowers
-  end
-  REDIS.set("pointer", k)
-  puts "Finished Batch 8."
 end
 
 # You can pass in a single user_id
