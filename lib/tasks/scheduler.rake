@@ -69,7 +69,6 @@ task :get_unfollowers_b5 => :environment do
   n.each do |user|
     user.get_unfollowers
   end
-  REDIS.set("pointer", k)
   puts "Finished Batch 5."
 end
 
