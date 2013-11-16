@@ -3,9 +3,9 @@ class FeedbackMailer < ActionMailer::Base
 
   sendgrid_category 'Feedback Mail'
 
-  default :from => "feedback@mallowapp.com"
+  default :from => "mallowapp@hopkins.io"
   default :fromname => "Mallow"
-  default :to => "chris@mallowapp.com"
+  default :to => "mallowapp@hopkins.io"
 
   # send mail with feedback
   def feedback_mail(feedback)
