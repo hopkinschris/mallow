@@ -1,25 +1,25 @@
 %style
   - # Remove label from layout on mobile devices
   @media all and (max-width: 480px) { label { display:none; } }
-  
+
 %body{ :style => "background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#444;" }
 
   #mail{ :style => "max-width:535px;margin:0.7em auto;" }
 
     %div{ :style => "padding:1.5em 2.9em 1em 2.9em;" }
-      %img{ :src => "http://mallowapp.herokuapp.com/assets/logo.png", :width => "108px", :height => "30px", :alt => "logo" ,:style => "width:108px;margin-bottom:1.5em;" }
+      %img{ :src => "http://mallow.herokuapp.com/assets/logo.png", :width => "108px", :height => "30px", :alt => "logo" ,:style => "width:108px;margin-bottom:1.5em;" }
       %label{ :style => "float:right;font-size:15px;vertical-align:-8px;color:#ddd;border: 2px solid #eee;font-weight:400;padding: 5px 6px 6px 6px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px;" } @#{@user.nickname}
       %span{ :style => "margin:0 auto;display:block;max-width:457px;border-bottom:1px solid #eee;"}
 
     %div{ :style => "background:#fff;padding:0 2.3em 0em 2.3em;font-size:17px;font-weight:300;color:#444;" }
-      %p 
-        %h2{ :style => "color:#222;font-size:22px;line-height:1.15em;margin-bottom:0.8em;font-weight:700;" } Your account is now ready! 
-      
-      %p Starting tomorrow you will begin receiving a daily email with a list of your Twitter unfollowers. 
+      %p
+        %h2{ :style => "color:#222;font-size:22px;line-height:1.15em;margin-bottom:0.8em;font-weight:700;" } Your account is now ready!
 
-      %p 
-        Mallow is currently in private beta and I love hearing feedback from people using the service so I can continually work on making it better. Any issues, ideas, or just want to say "Hello" please don't hesitate to shoot me a note via the 
-        %a{ :href => "http://mallowapp.com/feedback", :style => "color: #0881B3;text-decoration: none;border-bottom:1px solid;" } 
+      %p Starting tomorrow you will begin receiving a daily email with a list of your Twitter unfollowers.
+
+      %p
+        Mallow is currently in private beta and I love hearing feedback from people using the service so I can continually work on making it better. Any issues, ideas, or just want to say "Hello" please don't hesitate to shoot me a note via the
+        %a{ :href => "http://mallowapp.com/feedback", :style => "color: #0881B3;text-decoration: none;border-bottom:1px solid;" }
           feedback
         page.
 

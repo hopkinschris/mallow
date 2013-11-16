@@ -1,4 +1,4 @@
-# mallowapp
+# Mallow
 
 Get mail about who unfollowed you on Twitter.
 
@@ -11,4 +11,4 @@ Christopher Hopkins
 
 ## License
 
-You may use Mallowapp under the terms of the [MIT License](https://github.com/chocolit/mallowapp/blob/master/LICENSE).
+You may use Mallowapp under the terms of the [MIT License](https://github.com/hopkinschris/mallow/blob/master/LICENSE).
