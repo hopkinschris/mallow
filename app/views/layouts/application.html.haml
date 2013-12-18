@@ -3,11 +3,12 @@
 %body{ :class => controller_name, :id => action_name }
 
   = render 'layouts/header'
-    
+
   %section
     = render 'layouts/flash_messages'
     = yield
 
   = render 'layouts/footer'
+  = render 'layouts/ribbon'
 
 = yield :javascripts
