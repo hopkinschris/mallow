@@ -3,8 +3,7 @@ class UnfollowerMailer < ActionMailer::Base
 
   sendgrid_category 'Unfollower Mail'
 
-  default :from => "mallowapp@hopkins.io"
-  default :fromname => "Mallow"
+  default :from => ENV['ADMIN_EMAIL']
 
   helper ApplicationHelper
 

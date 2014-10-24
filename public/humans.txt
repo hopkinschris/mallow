@@ -1,6 +1,6 @@
 /* TEAM */
 
 Creator: Christopher Hopkins
-Site: http://mallow.herokuapp.com
+Site: https://github.com/hopkinschris/mallow
 Twitter: hopkinschris
 Location: Toronto

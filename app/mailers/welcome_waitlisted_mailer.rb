@@ -3,7 +3,7 @@ class WelcomeWaitlistedMailer < ActionMailer::Base
 
   sendgrid_category 'Welcome Waitlisted Mail'
 
-  default :from => "mallowapp@hopkins.io"
+  default :from => ENV['ADMIN_EMAIL']
   default :fromname => "Mallow"
 
   helper ApplicationHelper
